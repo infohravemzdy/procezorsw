@@ -1,0 +1,6 @@
+framework module legalios {
+  umbrella header "legalios-umbrella.h"
+
+  export *
+  module * { export * }
+}

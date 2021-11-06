@@ -1,0 +1,24 @@
+PODS:
+  - legalios (0.0.7)
+  - Nimble (9.2.1)
+  - Quick (4.0.0)
+
+DEPENDENCIES:
+  - legalios
+  - Nimble
+  - Quick
+
+SPEC REPOS:
+  trunk:
+    - legalios
+    - Nimble
+    - Quick
+
+SPEC CHECKSUMS:
+  legalios: d1318ea3e9fd6d39b1d24da2642650e50652c39f
+  Nimble: e7e615c0335ee4bf5b0d786685451e62746117d5
+  Quick: 6473349e43b9271a8d43839d9ba1c442ed1b7ac4
+
+PODFILE CHECKSUM: b68744346afe57e6ae842f2af4cd2efc9f26a71e
+
+COCOAPODS: 1.11.2
