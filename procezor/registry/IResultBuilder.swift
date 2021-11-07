@@ -3,6 +3,7 @@
 //
 
 import Foundation
+import legalios
 
 protocol IResultBuilder {
     var version: VersionCode { get }
@@ -11,5 +12,5 @@ protocol IResultBuilder {
     var articlePaths: Dictionary<ArticleCode, Array<ArticleDefine>> { get }
 
     func initWithPeriod(version: VersionCode, period: IPeriod, articleFactory: ArticleSpecFactory, conceptFactory: ConceptSpecFactory) -> Bool
-    func getResults(targets: Array<ITermTarget>, finDefs: ArticleDefine) -> BuilderResultList
+    func getResults(ruleset: IBundleProps, targets: Array<ITermTarget>, finDefs: ArticleDefine) -> BuilderResultList
 }

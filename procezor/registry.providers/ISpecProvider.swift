@@ -3,6 +3,7 @@
 //
 
 import Foundation
+import legalios
 
 protocol ISpecProvider {
     associatedtype S

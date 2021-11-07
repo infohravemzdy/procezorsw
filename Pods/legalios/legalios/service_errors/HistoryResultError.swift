@@ -15,17 +15,17 @@ public enum HistoryResultError : IHistoryResultError {
     case bundleInvalidError(_ message: String)
 }
 
-extension HistoryResultError {
-    public static func CreateBundleNoneError() -> HistoryResultError {
+public extension HistoryResultError {
+    static func CreateBundleNoneError() -> HistoryResultError {
         return .bundleNoneError("service hasn't returned bundle")
     }
-    public static func CreateBundleNullError() -> HistoryResultError {
+    static func CreateBundleNullError() -> HistoryResultError {
         return .bundleNullError("service returned null bundle")
     }
-    public static func CreateBundleEmptyError() -> HistoryResultError {
+    static func CreateBundleEmptyError() -> HistoryResultError {
         return .bundleEmptyError("service returned empty bundle")
     }
-    public static func CreateBundleInvalidError() -> HistoryResultError {
+    static func CreateBundleInvalidError() -> HistoryResultError {
         return .bundleInvalidError("service returned invalid bundle")
     }
 }

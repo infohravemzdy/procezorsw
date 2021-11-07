@@ -3,6 +3,7 @@
 //
 
 import Foundation
+import legalios
 
 public class TermResult : TermSymbol, ITermResult {
     public let target: ITermTarget?
@@ -39,7 +40,7 @@ public class TermResult : TermSymbol, ITermResult {
                 _variant: _variant,
                 _article: _article)
     }
-    public override func conceptDescr() -> String {
+    public func conceptDescr() -> String {
         String("ConceptCode for \(concept.value)")
     }
 }

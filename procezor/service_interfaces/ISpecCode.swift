@@ -4,6 +4,5 @@
 
 import Foundation
 
-public protocol ISpecCode : ICodeValue {
-    typealias T = Int32
+public protocol ISpecCode : ICodeValue where T == Int32 {
 }

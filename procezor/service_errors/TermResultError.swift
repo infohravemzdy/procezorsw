@@ -3,6 +3,7 @@
 //
 
 import Foundation
+import legalios
 
 public protocol ITermResultError : Error {
     var target: ITermTarget? { get }

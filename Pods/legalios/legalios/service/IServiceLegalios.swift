@@ -4,6 +4,6 @@
 
 import Foundation
 
-protocol IServiceLegalios {
+public protocol IServiceLegalios {
     func getBundle(_ period: IPeriod) -> Result<IBundleProps, HistoryResultError>
 }

@@ -4,7 +4,7 @@
 
 import Foundation
 
-protocol IVersionId {
+public protocol IVersionId {
     associatedtype T
 
     var value:T { get }

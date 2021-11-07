@@ -3,10 +3,9 @@
 //
 
 import Foundation
+import legalios
 
-protocol IArticleSpecProvider : ISpecProvider {
-    typealias S = ArticleSpec
-    typealias C = ArticleCode
+protocol IArticleSpecProvider : ISpecProvider where S == ArticleSpec, C == ArticleCode {
 }
 
 class ArticleSpecProvider : IArticleSpecProvider {

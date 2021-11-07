@@ -3,6 +3,7 @@
 //
 
 import Foundation
+import legalios
 
 public func isSuccess(_ result: Result<ITermResult, TermResultError>) -> Bool {
     if case .success = result { return true } else { return false }
@@ -56,10 +57,10 @@ class ResultBuilder : IResultBuilder {
         return true
     }
 
-    func getResults(targets: Array<ITermTarget>, finDefs: ArticleDefine) -> BuilderResultList {
+    func getResults(ruleset: IBundleProps, targets: Array<ITermTarget>, finDefs: ArticleDefine) -> BuilderResultList {
         let calculTargets = buildCalculsList(period: periodInit, targets: targets, finDefs: finDefs)
 
-        let calculResults = buildResultsList(period: periodInit, calculs: calculTargets)
+        let calculResults = buildResultsList(period: periodInit, ruleset: ruleset, calculs: calculTargets)
 
         return calculResults
     }
@@ -77,11 +78,11 @@ class ResultBuilder : IResultBuilder {
 
         return calculsList
     }
-    private func buildResultsList(period: IPeriod, calculs: Array<ITermCalcul>) -> BuilderResultList {
-        var resultsInit: BuilderResultList = [BuilderResult]()
+    private func buildResultsList(period: IPeriod, ruleset: IBundleProps, calculs: Array<ITermCalcul>) -> BuilderResultList {
+        let resultsInit: BuilderResultList = [BuilderResult]()
 
         return calculs.reduce(resultsInit) { (agr, x : ITermCalcul) in return
-            mergeResults(results: agr, resultValues: x.getResults(period: period, results: agr))
+            mergeResults(results: agr, resultValues: x.getResults(period: period, ruleset: ruleset, results: agr))
         }
     }
     private func mergeResults(results: BuilderResultList, resultValues: BuilderResultList) -> BuilderResultList {
@@ -135,12 +136,12 @@ class ResultBuilder : IResultBuilder {
         return lessThan
     }
     private func addExternToTargets(period: IPeriod, targets: Array<ITermTarget>) -> Array<ITermTarget> {
-        var targetsInit: Array<ITermTarget> = targets.map { $0 }
+        let targetsInit: Array<ITermTarget> = targets.map { $0 }
 
-        var targetList = targets.reduce(targetsInit) {agr, item in
+        let targetList = targets.reduce(targetsInit) {agr, item in
             return  mergePendings(period: period, initRes: agr, target: item)}.map { $0 }
 
-        var targetSort = targetList.sorted (by: compareTargets(topoOrders: articleOrder))
+        let targetSort = targetList.sorted (by: compareTargets(topoOrders: articleOrder))
 
         return targetSort
     }
@@ -187,7 +188,7 @@ class ResultBuilder : IResultBuilder {
 
         return conceptSpec?.resultDelegate ?? notFoundCalculFunc
     }
-    private func notFoundCalculFunc(target: ITermTarget, period: IPeriod, results: BuilderResultList) -> BuilderResultList
+    private func notFoundCalculFunc(target: ITermTarget, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList
     {
         let resultError = TermResultError.CreateNoResultFuncError(period: period, target: target)
         return [.failure(resultError)]

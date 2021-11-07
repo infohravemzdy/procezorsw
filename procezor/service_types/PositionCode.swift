@@ -8,13 +8,7 @@ public class PositionCode : Comparable, ICodeValue {
     public let value: Int16
 
     public static func ==(lhs: PositionCode, rhs: PositionCode) -> Bool {
-        if lhs == nil && rhs == nil {
-            return true
-        }
-        if lhs != nil && rhs != nil {
-            return lhs.value == rhs.value
-        }
-        return false
+        lhs.value == rhs.value
     }
 
     public static func <(lhs: PositionCode, rhs: PositionCode) -> Bool {

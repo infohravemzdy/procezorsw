@@ -3,10 +3,9 @@
 //
 
 import Foundation
+import legalios
 
-protocol IConceptSpecProvider: ISpecProvider {
-    typealias S = ConceptSpec
-    typealias C = ConceptCode
+protocol IConceptSpecProvider: ISpecProvider where S == ConceptSpec, C == ConceptCode {
 }
 
 class ConceptSpecProvider : IConceptSpecProvider {

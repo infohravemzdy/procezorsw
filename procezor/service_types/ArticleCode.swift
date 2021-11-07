@@ -8,13 +8,7 @@ public class ArticleCode : Comparable, Hashable, ISpecCode {
     public let value: Int32
 
     public static func ==(lhs: ArticleCode, rhs: ArticleCode) -> Bool {
-        if lhs == nil && rhs == nil {
-            return true
-        }
-        if lhs != nil && rhs != nil {
-            return lhs.value == rhs.value
-        }
-        return false
+        lhs.value == rhs.value
     }
 
     public static func <(lhs: ArticleCode, rhs: ArticleCode) -> Bool {
@@ -37,7 +31,7 @@ public class ArticleCode : Comparable, Hashable, ISpecCode {
         return ArticleCode(value)
     }
 
-    public var hashValue: Int {
-        return value.hashValue
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(value)
     }
 }

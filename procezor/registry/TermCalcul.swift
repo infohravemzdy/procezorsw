@@ -3,6 +3,7 @@
 //
 
 import Foundation
+import legalios
 
 class TermCalcul : TermSymbol, ITermCalcul {
     var target: ITermTarget
@@ -16,12 +17,12 @@ class TermCalcul : TermSymbol, ITermCalcul {
         super.init(_month: target.monthCode, _contract: target.contract, _position: target.position,
                 _variant: target.variant, _article: target.article)
     }
-    func getResults(period: IPeriod, results: BuilderResultList) -> BuilderResultList {
+    func getResults(period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList {
         if (resultDelegate == nil) {
             let resultError = TermResultError.CreateNoResultFuncError(period: period, target: target)
             return [.failure(resultError)]
         }
-        var resultTarget = resultDelegate!(target, period, results)
+        let resultTarget = resultDelegate!(target, period, ruleset, results)
 
         return resultTarget.map { $0 }
     }

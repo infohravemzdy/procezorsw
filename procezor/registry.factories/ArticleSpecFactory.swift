@@ -3,6 +3,7 @@
 //
 
 import Foundation
+import legalios
 
 protocol IArticleSpecFactory : ISpecFactory where SP : IArticleSpecProvider, SS : IArticleSpec, SC : ArticleCode {
 }
@@ -36,7 +37,7 @@ class NotFoundArticleProvider : ArticleSpecProvider {
     }
 
     override func getSpec(period: IPeriod, version: VersionCode) -> ArticleSpec {
-        return NotFoundArticleSpec(article: code) as! ArticleSpec
+        return NotFoundArticleSpec(article: code)
     }
 }
 
@@ -46,7 +47,7 @@ class ArticleSpecFactory : SpecFactory<ArticleSpecProvider, ArticleSpec, Article
     }
 
     static func BuildProvidersFromRecords(records: Array<ProviderRecord>) -> Array<ArticleSpecProvider> {
-        var providers: Array<ArticleSpecProvider> = records.map { x in
+        let providers: Array<ArticleSpecProvider> = records.map { x in
             return ArticleProviderConfig(code: x.article, role: x.concept, sums: x.sums)
         }
         return providers

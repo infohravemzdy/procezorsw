@@ -4,12 +4,12 @@
 
 import Foundation
 
-class ServiceLegalios : IServiceLegalios {
+public class ServiceLegalios : IServiceLegalios {
     let builder: IBundleBuilder
-    init () {
+    public init () {
         builder = BundleBuilder()
     }
-    func getBundle(_ period: IPeriod) -> Result<IBundleProps, HistoryResultError> {
+    public func getBundle(_ period: IPeriod) -> Result<IBundleProps, HistoryResultError> {
         let bundle: IBundleProps? = builder.getBundle(period)
 
         if bundle == nil {

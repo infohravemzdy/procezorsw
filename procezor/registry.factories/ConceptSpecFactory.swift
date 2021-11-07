@@ -3,6 +3,7 @@
 //
 
 import Foundation
+import legalios
 
 protocol IConceptSpecFactory : ISpecFactory where SP : IConceptSpecProvider, SS : IConceptSpec, SC : ConceptCode {
 }
@@ -23,7 +24,7 @@ class NotFoundConceptProvider : ConceptSpecProvider {
     }
 
     override func getSpec(period: IPeriod, version: VersionCode) -> ConceptSpec {
-        return NotFoundConceptSpec(concept: code) as! ConceptSpec
+        return NotFoundConceptSpec(concept: code)
     }
 }
 

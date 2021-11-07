@@ -8,13 +8,7 @@ public class ConceptCode : Comparable, ISpecCode {
     public let value: Int32
 
     public static func ==(lhs: ConceptCode, rhs: ConceptCode) -> Bool {
-        if lhs == nil && rhs == nil {
-            return true
-        }
-        if lhs != nil && rhs != nil {
-            return lhs.value == rhs.value
-        }
-        return false
+        lhs.value == rhs.value
     }
 
     public static func <(lhs: ConceptCode, rhs: ConceptCode) -> Bool {

@@ -4,7 +4,7 @@
 
 import Foundation
 
-protocol IPropsSalary : IProps {
+public protocol IPropsSalary : IProps {
     var workingShiftWeek : Int32 { get }
     var workingShiftTime : Int32 { get }
     var minMonthlyWage : Int32 { get }

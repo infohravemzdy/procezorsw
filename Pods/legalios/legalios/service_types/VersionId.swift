@@ -4,14 +4,14 @@
 
 import Foundation
 
-struct VersionId : Comparable, IVersionId {
+public struct VersionId : Comparable, IVersionId {
     static let VERSION_ZERO: Int16 = 0
 
-    static func <(lhs: VersionId, rhs: VersionId) -> Bool {
+    public static func <(lhs: VersionId, rhs: VersionId) -> Bool {
         lhs.value < rhs.value
     }
 
-    typealias T = Int16
+    public typealias T = Int16
 
     init () {
         self.value = VersionId.VERSION_ZERO
@@ -21,13 +21,13 @@ struct VersionId : Comparable, IVersionId {
         self.value = value
     }
 
-    static func new() -> VersionId {
+    public static func new() -> VersionId {
         return VersionId(VersionId.VERSION_ZERO)
     }
 
-    static func get(value: Int16) -> VersionId {
+    public static func get(value: Int16) -> VersionId {
         return VersionId(value)
     }
 
-    let value: T
+    public let value: Int16
 }

@@ -8,8 +8,9 @@ struct ArticleEdge : Hashable {
     let start: ArticleCode
     let stops: ArticleCode
 
-    var hashValue: Int {
-        return start.hashValue ^ stops.hashValue  &* 16777619
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(start)
+        hasher.combine(stops)
     }
 }
 
@@ -98,7 +99,7 @@ class DependencyGraph {
             }
             return x.start < y.start
         }
-        var initEdge: Array<ArticleEdge> = []
+        let initEdge: Array<ArticleEdge> = []
 
         return articlesModel.reduce(initEdge) { agr, x in
             return mergeEdges(conceptsModel: conceptsModel, agr: agr, article: x) }
@@ -111,7 +112,7 @@ class DependencyGraph {
     private func mergeEdges(conceptsModel: Array<ConceptSpec>, agr: Array<ArticleEdge>,  article: ArticleSpec) -> Array<ArticleEdge>
     {
         var result = Set<ArticleEdge>(agr).map { $0 }
-        var concept = conceptsModel.first { c in return c.code == article.role }
+        let concept = conceptsModel.first { c in return c.code == article.role }
 
         if (concept != nil) {
             result = Set<ArticleEdge>(article.sums.map { s in return ArticleEdge(start: article.code, stops: s) } + result).map { $0 }

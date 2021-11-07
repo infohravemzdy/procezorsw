@@ -6,13 +6,7 @@ import Foundation
 
 class ArticleSpec : IArticleSpec, Comparable {
     public static func ==(lhs: ArticleSpec, rhs: ArticleSpec) -> Bool {
-        if lhs == nil && rhs == nil {
-            return true
-        }
-        if lhs != nil && rhs != nil {
-            return lhs.code == rhs.code
-        }
-        return false
+        lhs.code == rhs.code
     }
 
     public static func <(lhs: ArticleSpec, rhs: ArticleSpec) -> Bool {

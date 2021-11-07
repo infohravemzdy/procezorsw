@@ -4,7 +4,7 @@
 
 import Foundation
 
-protocol IPropsHealth : IProps {
+public protocol IPropsHealth : IProps {
     var minMonthlyBasis: Int32 { get }
     var maxAnnualsBasis: Int32 { get }
     var limMonthlyState: Int32 { get }

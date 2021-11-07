@@ -3,6 +3,7 @@
 //
 
 import Foundation
+import legalios
 
 class ServiceProcezor : IServiceProcezor {
     public let version: VersionCode
@@ -16,9 +17,12 @@ class ServiceProcezor : IServiceProcezor {
     init (_version: VersionCode, _finDefs: ArticleDefine) {
         self.version = _version
         self.finDefs = _finDefs
-        self.buildFactories()
+        let buildSuccess = self.buildFactories()
+        if buildSuccess == false {
+            // log error
+        }
     }
-    func getResults(period: IPeriod, targets: ITermTargetList) -> BuilderResultList {
+    func getResults(period: IPeriod, ruleset: IBundleProps, targets: ITermTargetList) -> BuilderResultList {
         var results: BuilderResultList = [BuilderResult]()
 
         let success: Bool = initWithPeriod(period: period)
@@ -26,30 +30,19 @@ class ServiceProcezor : IServiceProcezor {
         if (!success) {
             return results
         }
-        if (builder != nil) {
-            results = builder.getResults(targets: targets, finDefs: finDefs)
-        }
+        results = builder.getResults(ruleset: ruleset, targets: targets, finDefs: finDefs)
         return results
     }
 
     func initWithPeriod(period: IPeriod) -> Bool {
-        var initResult: Bool = false
+        var initResult: Bool = true
 
-        if (builder != nil) {
-            initResult = true
-        }
-
-        var initBuilder: Bool = false
-
-        if (builder != nil) {
-            initBuilder = !builder.periodInit.equals(other: period)
-        }
+        let initBuilder: Bool = !builder.periodInit.equals(other: period)
 
         if (initBuilder && articleFactory != nil && conceptFactory != nil) {
             initResult = builder.initWithPeriod(version: version, period: period,
                     articleFactory: articleFactory!, conceptFactory: conceptFactory!)
         }
-
         return initResult
     }
 

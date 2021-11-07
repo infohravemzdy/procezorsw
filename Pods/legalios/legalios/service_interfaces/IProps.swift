@@ -4,6 +4,6 @@
 
 import Foundation
 
-protocol IProps {
+public protocol IProps {
     var version: VersionId { get }
 }

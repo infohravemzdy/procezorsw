@@ -6,13 +6,7 @@ import Foundation
 
 public class ConceptSpec : IConceptSpec, Comparable {
     public static func ==(lhs: ConceptSpec, rhs: ConceptSpec) -> Bool {
-        if lhs == nil && rhs == nil {
-            return true
-        }
-        if lhs != nil && rhs != nil {
-            return lhs.code == rhs.code
-        }
-        return false
+        lhs.code == rhs.code
     }
 
     public static func <(lhs: ConceptSpec, rhs: ConceptSpec) -> Bool {

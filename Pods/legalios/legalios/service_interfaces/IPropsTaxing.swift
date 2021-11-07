@@ -4,7 +4,7 @@
 
 import Foundation
 
-protocol IPropsTaxing : IProps {
+public protocol IPropsTaxing : IProps {
     var allowancePayer: Int32 { get }
     var allowanceDisab1st: Int32 { get }
     var allowanceDisab2nd : Int32 { get }

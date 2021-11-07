@@ -4,7 +4,7 @@
 
 import Foundation
 
-protocol IPropsSocial : IProps {
+public protocol IPropsSocial : IProps {
     var maxAnnualsBasis: Int32 { get }
     var factorEmployer: Decimal { get }
     var factorEmployerHigher: Decimal { get }

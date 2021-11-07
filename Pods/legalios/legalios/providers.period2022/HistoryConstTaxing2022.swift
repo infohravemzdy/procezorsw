@@ -64,6 +64,6 @@ struct HistoryConstTaxing2022
     static let MARGIN_INCOME_OF_WITHHOLD: Int32 = HistoryConstTaxing2021.MARGIN_INCOME_OF_WITHHOLD
     static let MARGIN_INCOME_OF_SOLITARY: Int32 = HistoryConstTaxing2021.MARGIN_INCOME_OF_SOLITARY
     static let MARGIN_INCOME_OF_WHT_EMP: Int32 = HistoryConstTaxing2021.MARGIN_INCOME_OF_WHT_EMP
-    static let MARGIN_INCOME_OF_WHT_AGR: Int32 = HistoryConstTaxing2020.MARGIN_INCOME_OF_WHT_AGR
+    static let MARGIN_INCOME_OF_WHT_AGR: Int32 = HistoryConstTaxing2021.MARGIN_INCOME_OF_WHT_AGR
 }
 

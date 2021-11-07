@@ -8,13 +8,7 @@ public class MonthCode : Comparable, ICodeValue {
     public let value: Int32
 
     public static func ==(lhs: MonthCode, rhs: MonthCode) -> Bool {
-        if lhs == nil && rhs == nil {
-            return true
-        }
-        if lhs != nil && rhs != nil {
-            return lhs.value == rhs.value
-        }
-        return false
+        lhs.value == rhs.value
     }
 
     public static func <(lhs: MonthCode, rhs: MonthCode) -> Bool {

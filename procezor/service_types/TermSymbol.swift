@@ -34,7 +34,7 @@ public class TermSymbol : ITermSymbol {
                 _variant: VariantCode.new(),
                 _article: ArticleCode.new())
     }
-    public override func articleDescr() -> String {
+    public func articleDescr() -> String {
         String("ArticleCode for \(article.value)")
     }
 }

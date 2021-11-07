@@ -9,17 +9,11 @@ public class ArticleDefine : IArticleDefine {
     public let role: ConceptCode
 
     public static func ==(lhs: ArticleDefine, rhs: ArticleDefine) -> Bool {
-        if lhs == nil && rhs == nil {
-            return true
-        }
-        if lhs != nil && rhs != nil {
-            return lhs.code == rhs.code
-        }
-        return false
+        lhs.code == rhs.code
     }
 
-    public var hashValue: Int {
-        return code.hashValue
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(code)
     }
 
     init(code: ArticleCode, role: ConceptCode) {

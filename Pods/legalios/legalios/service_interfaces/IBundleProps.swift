@@ -4,7 +4,7 @@
 
 import Foundation
 
-protocol IBundleProps {
+public protocol IBundleProps {
     var periodProps: IPeriod { get }
     var salaryProps: IPropsSalary? { get }
     var healthProps: IPropsHealth? { get }

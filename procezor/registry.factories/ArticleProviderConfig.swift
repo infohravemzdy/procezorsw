@@ -3,6 +3,7 @@
 //
 
 import Foundation
+import legalios
 
 class ArticleProviderConfig: ArticleSpecProvider {
     let articleSpec: ArticleSpecConfig

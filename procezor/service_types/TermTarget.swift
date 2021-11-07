@@ -47,7 +47,7 @@ public class TermTarget : TermSymbol, ITermTarget {
                 _basis: 0,
                 _descr: "")
     }
-    public override func conceptDescr() -> String {
+    public func conceptDescr() -> String {
         String("ConceptCode for \(concept.value)")
     }
 }

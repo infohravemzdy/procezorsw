@@ -3,6 +3,7 @@
 //
 
 import Foundation
+import legalios
 
 typealias CODE = Int32
 
