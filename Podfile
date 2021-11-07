@@ -14,6 +14,7 @@ target 'procezor' do
     inherit! :search_paths
     pod 'Quick'
     pod 'Nimble'
+    pod 'legalios'
   end
 
 end

@@ -83,9 +83,10 @@ class DependencyGraph {
                     -> (Array<ArticleCode>, Dictionary<ArticleCode, Array<ArticleDefine>>) {
         let vertModel: Array<ArticleCode> = createVertModel(articlesModel: articlesModel)
         let edgeModel: Array<ArticleEdge> = createEdgeModel(articlesModel: articlesModel, conceptsModel: conceptsModel)
+        let pendModel: Array<ArticleEdge> = createPendModel(articlesModel: articlesModel, conceptsModel: conceptsModel)
 
         let order = createTopoModel(vertModel: vertModel, edgeModel: edgeModel)
-        let paths = createPathModel(articlesModel: articlesModel, vertModel: vertModel, edgeModel: edgeModel, vertOrder: order)
+        let paths = createPathModel(articlesModel: articlesModel, vertModel: vertModel, edgeModel: pendModel, vertOrder: order)
 
         return (order, paths)
     }
@@ -105,6 +106,19 @@ class DependencyGraph {
             return mergeEdges(conceptsModel: conceptsModel, agr: agr, article: x) }
                 .sorted(by: edgeSorter)
     }
+    private func createPendModel(articlesModel: Array<ArticleSpec>, conceptsModel: Array<ConceptSpec>) -> Array<ArticleEdge> {
+        func edgeSorter(x:ArticleEdge, y:ArticleEdge) -> Bool {
+            if (x.start == y.start) {
+                return x.stops < y.stops
+            }
+            return x.start < y.start
+        }
+        let initEdge: Array<ArticleEdge> = []
+
+        return articlesModel.reduce(initEdge) { agr, x in
+                    return mergePends(conceptsModel: conceptsModel, agr: agr, article: x) }
+                .sorted(by: edgeSorter)
+    }
     private func createPathModel(articlesModel: Array<ArticleSpec>, vertModel: Array<ArticleCode>, edgeModel: Array<ArticleEdge>, vertOrder: Array<ArticleCode>) -> Dictionary<ArticleCode, Array<ArticleDefine>> {
         return Dictionary<ArticleCode, Array<ArticleDefine>>(uniqueKeysWithValues: vertModel.map { x in
             return (x, mergePaths(articlesModel: articlesModel, edgeModel: edgeModel, vertOrder: vertOrder, article: x)) })
@@ -117,6 +131,16 @@ class DependencyGraph {
         if (concept != nil) {
             result = Set<ArticleEdge>(article.sums.map { s in return ArticleEdge(start: article.code, stops: s) } + result).map { $0 }
 
+            result = Set<ArticleEdge>(concept!.path.map { p in return ArticleEdge(start: p, stops: article.code) } + result).map { $0 }
+        }
+        return result
+    }
+    private func mergePends(conceptsModel: Array<ConceptSpec>, agr: Array<ArticleEdge>,  article: ArticleSpec) -> Array<ArticleEdge>
+    {
+        var result = Set<ArticleEdge>(agr).map { $0 }
+        let concept = conceptsModel.first { c in return c.code == article.role }
+
+        if (concept != nil) {
             result = Set<ArticleEdge>(concept!.path.map { p in return ArticleEdge(start: p, stops: article.code) } + result).map { $0 }
         }
         return result
