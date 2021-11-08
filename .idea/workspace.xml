@@ -2,29 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67a64416-0c64-4534-afcd-9a50168fc11f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/procezor.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/All in procezorTests.xcscheme" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/procezorTests/example/ExampleArticleConst.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/procezorTests/example/ExampleConceptConst.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/procezorTests/example/ServiceArticles.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/procezorTests/example/ServiceExample.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/procezorTests/example/ServiceFactories.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/procezorTests/example/ServiceProviders.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/procezorTests/example/ServiceResults.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/procezorTests/service/ServiceProcezorExampleWithSalaryBonusBarterTest.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/procezorTests/service/ServiceProcezorExampleWithSalaryHomeOfficeTest.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/Podfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pods/Manifest.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Manifest.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-procezorTests/Pods-procezorTests-acknowledgements.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-procezorTests/Pods-procezorTests-acknowledgements.markdown" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-procezorTests/Pods-procezorTests-acknowledgements.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-procezorTests/Pods-procezorTests-acknowledgements.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-procezorTests/Pods-procezorTests-frameworks.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-procezorTests/Pods-procezorTests-frameworks.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/procezor.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/procezor.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/registry/DependencyGraph.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/registry/DependencyGraph.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezorTests/procezorTests.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezorTests/example/ExampleArticles.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezorTests/example/ExampleArticles.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezorTests/example/ExampleFactories.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezorTests/example/ExampleFactories.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezorTests/example/ExampleProviders.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezorTests/example/ExampleProviders.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +69,7 @@
       <workItem from="1636132818036" duration="34000" />
       <workItem from="1636193892816" duration="326000" />
       <workItem from="1636281038321" duration="9109000" />
+      <workItem from="1636389093463" duration="2031000" />
     </task>
     <servers />
   </component>

@@ -6,31 +6,31 @@ import Foundation
 
 class ExampleArticleFactory : ArticleSpecFactory {
     private let providersConfig = Array<ProviderRecord>(arrayLiteral:
-    ProviderRecord(article: ExampleArticleConst.ARTICLE_TIMESHT_WORKING.rawValue, concept: ExampleConceptConst.CONCEPT_TIMESHT_WORKING.rawValue,
-            sums: Array<Int32>()),
+            ProviderRecord(article: ExampleArticleConst.ARTICLE_TIMESHT_WORKING.rawValue, concept: ExampleConceptConst.CONCEPT_TIMESHT_WORKING.rawValue,
+                    sums: Array<Int32>()),
             ProviderRecord(article: ExampleArticleConst.ARTICLE_PAYMENT_SALARY.rawValue, concept: ExampleConceptConst.CONCEPT_AMOUNT_BASIS.rawValue,
                     sums: Array<Int32>(arrayLiteral:
-                    ExampleArticleConst.ARTICLE_INCOME_GROSS.rawValue,
-                            ExampleArticleConst.ARTICLE_HEALTH_INSBASE.rawValue,
-                            ExampleArticleConst.ARTICLE_SOCIAL_INSBASE.rawValue,
-                            ExampleArticleConst.ARTICLE_TAXING_ADVBASE.rawValue
+                        ExampleArticleConst.ARTICLE_INCOME_GROSS.rawValue,
+                        ExampleArticleConst.ARTICLE_HEALTH_INSBASE.rawValue,
+                        ExampleArticleConst.ARTICLE_SOCIAL_INSBASE.rawValue,
+                        ExampleArticleConst.ARTICLE_TAXING_ADVBASE.rawValue
                     )),
             ProviderRecord(article: ExampleArticleConst.ARTICLE_PAYMENT_BONUS.rawValue, concept: ExampleConceptConst.CONCEPT_AMOUNT_FIXED.rawValue,
                     sums: Array<Int32>(arrayLiteral:
-                    ExampleArticleConst.ARTICLE_INCOME_GROSS.rawValue,
-                            ExampleArticleConst.ARTICLE_HEALTH_INSBASE.rawValue,
-                            ExampleArticleConst.ARTICLE_SOCIAL_INSBASE.rawValue,
-                            ExampleArticleConst.ARTICLE_TAXING_ADVBASE.rawValue
+                        ExampleArticleConst.ARTICLE_INCOME_GROSS.rawValue,
+                        ExampleArticleConst.ARTICLE_HEALTH_INSBASE.rawValue,
+                        ExampleArticleConst.ARTICLE_SOCIAL_INSBASE.rawValue,
+                        ExampleArticleConst.ARTICLE_TAXING_ADVBASE.rawValue
                     )),
             ProviderRecord(article: ExampleArticleConst.ARTICLE_PAYMENT_BARTER.rawValue, concept: ExampleConceptConst.CONCEPT_AMOUNT_FIXED.rawValue,
                     sums: Array<Int32>(arrayLiteral:
-                    ExampleArticleConst.ARTICLE_HEALTH_INSBASE.rawValue,
-                            ExampleArticleConst.ARTICLE_SOCIAL_INSBASE.rawValue,
-                            ExampleArticleConst.ARTICLE_TAXING_ADVBASE.rawValue
+                        ExampleArticleConst.ARTICLE_HEALTH_INSBASE.rawValue,
+                        ExampleArticleConst.ARTICLE_SOCIAL_INSBASE.rawValue,
+                        ExampleArticleConst.ARTICLE_TAXING_ADVBASE.rawValue
                     )),
             ProviderRecord(article: ExampleArticleConst.ARTICLE_ALLOWCE_HOFFICE.rawValue, concept: ExampleConceptConst.CONCEPT_AMOUNT_FIXED.rawValue,
                     sums: Array<Int32>(arrayLiteral:
-                    ExampleArticleConst.ARTICLE_INCOME_NETTO.rawValue
+                        ExampleArticleConst.ARTICLE_INCOME_NETTO.rawValue
                     )),
             ProviderRecord(article: ExampleArticleConst.ARTICLE_HEALTH_INSBASE.rawValue, concept: ExampleConceptConst.CONCEPT_HEALTH_INSBASE.rawValue,
                     sums: Array<Int32>()),

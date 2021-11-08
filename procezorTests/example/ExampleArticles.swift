@@ -11,16 +11,14 @@ class TimeshtWorkingArtProv : ArticleSpecProvider {
         super.init(article: ArticleCode.get(TimeshtWorkingArtProv.ARTICLE_CODE))
     }
     override func getSpec(period: IPeriod, version: VersionCode) -> ArticleSpec {
-        TimeshtWorkingArtSpec(_code: code)
+        return TimeshtWorkingArtSpec(_code: self.code)
     }
 }
 
 class TimeshtWorkingArtSpec : ArticleSpec {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_TIMESHT_WORKING.rawValue
     init (_code: ArticleCode) {
-        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: Array<Int32>(
-                arrayLiteral: ExampleArticleConst.ARTICLE_TIMESHT_WORKING.rawValue
-        ))
+        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: Array<Int32>())
     }
 }
 
@@ -30,16 +28,20 @@ class PaymentSalaryArtProv : ArticleSpecProvider {
         super.init(article: ArticleCode.get(PaymentSalaryArtProv.ARTICLE_CODE))
     }
     override func getSpec(period: IPeriod, version: VersionCode) -> ArticleSpec {
-        PaymentSalaryArtSpec(_code: code)
+        return PaymentSalaryArtSpec(_code: self.code)
     }
 }
 
 class PaymentSalaryArtSpec : ArticleSpec {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_AMOUNT_BASIS.rawValue
     init (_code: ArticleCode) {
-        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: Array<Int32>(
-                arrayLiteral: ExampleArticleConst.ARTICLE_PAYMENT_SALARY.rawValue
-        ))
+        let _sums = [
+            ExampleArticleConst.ARTICLE_INCOME_GROSS.rawValue,
+            ExampleArticleConst.ARTICLE_HEALTH_INSBASE.rawValue,
+            ExampleArticleConst.ARTICLE_SOCIAL_INSBASE.rawValue,
+            ExampleArticleConst.ARTICLE_TAXING_ADVBASE.rawValue,
+        ]
+        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: _sums)
     }
 }
 
@@ -49,16 +51,20 @@ class PaymentBonusArtProv : ArticleSpecProvider {
         super.init(article: ArticleCode.get(PaymentBonusArtProv.ARTICLE_CODE))
     }
     override func getSpec(period: IPeriod, version: VersionCode) -> ArticleSpec {
-        PaymentBonusArtSpec(_code: code)
+        return PaymentBonusArtSpec(_code: self.code)
     }
 }
 
 class PaymentBonusArtSpec : ArticleSpec {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_AMOUNT_FIXED.rawValue
     init (_code: ArticleCode) {
-        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: Array<Int32>(
-                arrayLiteral: ExampleArticleConst.ARTICLE_PAYMENT_BONUS.rawValue
-        ))
+        let _sums = [
+            ExampleArticleConst.ARTICLE_INCOME_GROSS.rawValue,
+            ExampleArticleConst.ARTICLE_HEALTH_INSBASE.rawValue,
+            ExampleArticleConst.ARTICLE_SOCIAL_INSBASE.rawValue,
+            ExampleArticleConst.ARTICLE_TAXING_ADVBASE.rawValue,
+        ]
+        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: _sums)
     }
 }
 
@@ -68,16 +74,19 @@ class PaymentBarterArtProv : ArticleSpecProvider {
         super.init(article: ArticleCode.get(PaymentBarterArtProv.ARTICLE_CODE))
     }
     override func getSpec(period: IPeriod, version: VersionCode) -> ArticleSpec {
-        PaymentBarterArtSpec(_code: code)
+        return PaymentBarterArtSpec(_code: self.code)
     }
 }
 
 class PaymentBarterArtSpec : ArticleSpec {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_AMOUNT_FIXED.rawValue
     init (_code: ArticleCode) {
-        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: Array<Int32>(
-                arrayLiteral: ExampleArticleConst.ARTICLE_PAYMENT_BARTER.rawValue
-        ))
+        let _sums = [
+            ExampleArticleConst.ARTICLE_HEALTH_INSBASE.rawValue,
+            ExampleArticleConst.ARTICLE_SOCIAL_INSBASE.rawValue,
+            ExampleArticleConst.ARTICLE_TAXING_ADVBASE.rawValue,
+        ]
+        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: _sums)
     }
 }
 
@@ -87,16 +96,17 @@ class AllowceHofficeArtProv : ArticleSpecProvider {
         super.init(article: ArticleCode.get(AllowceHofficeArtProv.ARTICLE_CODE))
     }
     override func getSpec(period: IPeriod, version: VersionCode) -> ArticleSpec {
-        AllowceHofficeArtSpec(_code: code)
+        return AllowceHofficeArtSpec(_code: self.code)
     }
 }
 
 class AllowceHofficeArtSpec : ArticleSpec {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_AMOUNT_FIXED.rawValue
     init (_code: ArticleCode) {
-        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: Array<Int32>(
-                arrayLiteral: ExampleArticleConst.ARTICLE_ALLOWCE_HOFFICE.rawValue
-        ))
+        let _sums = [
+            ExampleArticleConst.ARTICLE_INCOME_NETTO.rawValue,
+        ]
+        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: _sums)
     }
 }
 
@@ -106,16 +116,14 @@ class HealthInsbaseArtProv : ArticleSpecProvider {
         super.init(article: ArticleCode.get(HealthInsbaseArtProv.ARTICLE_CODE))
     }
     override func getSpec(period: IPeriod, version: VersionCode) -> ArticleSpec {
-        HealthInsbaseArtSpec(_code: code)
+        return HealthInsbaseArtSpec(_code: self.code)
     }
 }
 
 class HealthInsbaseArtSpec : ArticleSpec {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_HEALTH_INSBASE.rawValue
     init (_code: ArticleCode) {
-        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: Array<Int32>(
-                arrayLiteral: ExampleArticleConst.ARTICLE_HEALTH_INSBASE.rawValue
-        ))
+        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: Array<Int32>())
     }
 }
 
@@ -125,16 +133,15 @@ class SocialInsbaseArtProv : ArticleSpecProvider {
         super.init(article: ArticleCode.get(SocialInsbaseArtProv.ARTICLE_CODE))
     }
     override func getSpec(period: IPeriod, version: VersionCode) -> ArticleSpec {
-        SocialInsbaseArtSpec(_code: code)
+        return SocialInsbaseArtSpec(_code: self.code)
     }
 }
 
 class SocialInsbaseArtSpec : ArticleSpec {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_SOCIAL_INSBASE.rawValue
-    init (_code: ArticleCode) {
-        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: Array<Int32>(
-                arrayLiteral: ExampleArticleConst.ARTICLE_SOCIAL_INSBASE.rawValue
-        ))
+
+    init(_code: ArticleCode) {
+        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: Array<Int32>())
     }
 }
 
@@ -144,16 +151,14 @@ class HealthInspaymArtProv : ArticleSpecProvider {
         super.init(article: ArticleCode.get(HealthInspaymArtProv.ARTICLE_CODE))
     }
     override func getSpec(period: IPeriod, version: VersionCode) -> ArticleSpec {
-        HealthInspaymArtSpec(_code: code)
+        return HealthInspaymArtSpec(_code: self.code)
     }
 }
 
 class HealthInspaymArtSpec : ArticleSpec {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_HEALTH_INSPAYM.rawValue
     init (_code: ArticleCode) {
-        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: Array<Int32>(
-                arrayLiteral: ExampleArticleConst.ARTICLE_HEALTH_INSPAYM.rawValue
-        ))
+        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: Array<Int32>())
     }
 }
 
@@ -163,16 +168,14 @@ class SocialInspaymArtProv : ArticleSpecProvider {
         super.init(article: ArticleCode.get(SocialInspaymArtProv.ARTICLE_CODE))
     }
     override func getSpec(period: IPeriod, version: VersionCode) -> ArticleSpec {
-        SocialInspaymArtSpec(_code: code)
+        return SocialInspaymArtSpec(_code: self.code)
     }
 }
 
 class SocialInspaymArtSpec : ArticleSpec {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_SOCIAL_INSPAYM.rawValue
     init (_code: ArticleCode) {
-        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: Array<Int32>(
-                arrayLiteral: ExampleArticleConst.ARTICLE_SOCIAL_INSPAYM.rawValue
-        ))
+        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: Array<Int32>())
     }
 }
 
@@ -182,16 +185,14 @@ class TaxingAdvbaseArtProv : ArticleSpecProvider {
         super.init(article: ArticleCode.get(TaxingAdvbaseArtProv.ARTICLE_CODE))
     }
     override func getSpec(period: IPeriod, version: VersionCode) -> ArticleSpec {
-        TaxingAdvbaseArtSpec(_code: code)
+        return TaxingAdvbaseArtSpec(_code: self.code)
     }
 }
 
 class TaxingAdvbaseArtSpec : ArticleSpec {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_TAXING_ADVBASE.rawValue
     init (_code: ArticleCode) {
-        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: Array<Int32>(
-                arrayLiteral: ExampleArticleConst.ARTICLE_TAXING_ADVBASE.rawValue
-        ))
+        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: Array<Int32>())
     }
 }
 
@@ -201,16 +202,14 @@ class TaxingAdvpaymArtProv : ArticleSpecProvider {
         super.init(article: ArticleCode.get(TaxingAdvpaymArtProv.ARTICLE_CODE))
     }
     override func getSpec(period: IPeriod, version: VersionCode) -> ArticleSpec {
-        TaxingAdvpaymArtSpec(_code: code)
+        return TaxingAdvpaymArtSpec(_code: self.code)
     }
 }
 
 class TaxingAdvpaymArtSpec : ArticleSpec {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_TAXING_ADVPAYM.rawValue
     init (_code: ArticleCode) {
-        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: Array<Int32>(
-                arrayLiteral: ExampleArticleConst.ARTICLE_TAXING_ADVPAYM.rawValue
-        ))
+        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: Array<Int32>())
     }
 }
 
@@ -220,16 +219,14 @@ class IncomeGrossArtProv : ArticleSpecProvider {
         super.init(article: ArticleCode.get(IncomeGrossArtProv.ARTICLE_CODE))
     }
     override func getSpec(period: IPeriod, version: VersionCode) -> ArticleSpec {
-        IncomeGrossArtSpec(_code: code)
+        return IncomeGrossArtSpec(_code: self.code)
     }
 }
 
 class IncomeGrossArtSpec : ArticleSpec {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_INCOME_GROSS.rawValue
     init (_code: ArticleCode) {
-        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: Array<Int32>(
-                arrayLiteral: ExampleArticleConst.ARTICLE_INCOME_GROSS.rawValue
-        ))
+        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: Array<Int32>())
     }
 }
 
@@ -239,16 +236,14 @@ class IncomeNettoArtProv : ArticleSpecProvider {
         super.init(article: ArticleCode.get(IncomeNettoArtProv.ARTICLE_CODE))
     }
     override func getSpec(period: IPeriod, version: VersionCode) -> ArticleSpec {
-        IncomeNettoArtSpec(_code: code)
+        return IncomeNettoArtSpec(_code: self.code)
     }
 }
 
 class IncomeNettoArtSpec : ArticleSpec {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_INCOME_NETTO.rawValue
     init (_code: ArticleCode) {
-        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: Array<Int32>(
-                arrayLiteral: ExampleArticleConst.ARTICLE_INCOME_NETTO.rawValue
-        ))
+        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: Array<Int32>())
     }
 }
 

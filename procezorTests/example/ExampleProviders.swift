@@ -67,9 +67,10 @@ class TimeshtWorkingConProv : ConceptSpecProvider {
     }
 
     override func getSpec(period: IPeriod, version: VersionCode) -> ConceptSpec {
-        TimeshtWorkingConSpec(_code: code)
+        return TimeshtWorkingConSpec(_code: self.code)
     }
 }
+
 class TimeshtWorkingConSpec : ConceptSpec {
     init(_code: ConceptCode) {
         super.init(concept: _code, path: Array<ArticleCode>(), result: TimeshtWorkingConSpec.conceptEval)
@@ -88,7 +89,7 @@ class AmountBasisConProv : ConceptSpecProvider {
     }
 
     override func getSpec(period: IPeriod, version: VersionCode) -> ConceptSpec {
-        AmountBasisConSpec(_code: code)
+        return AmountBasisConSpec(_code: self.code)
     }
 }
 
@@ -112,7 +113,7 @@ class AmountFixedConProv : ConceptSpecProvider {
     }
 
     override func getSpec(period: IPeriod, version: VersionCode) -> ConceptSpec {
-        AmountFixedConSpec(_code: code)
+        return AmountFixedConSpec(_code: self.code)
     }
 }
 
@@ -134,7 +135,7 @@ class HealthInsbaseConProv : ConceptSpecProvider {
     }
 
     override func getSpec(period: IPeriod, version: VersionCode) -> ConceptSpec {
-        HealthInsbaseConSpec(_code: code)
+        return HealthInsbaseConSpec(_code: self.code)
     }
 }
 
@@ -156,7 +157,7 @@ class SocialInsbaseConProv : ConceptSpecProvider {
     }
 
     override func getSpec(period: IPeriod, version: VersionCode) -> ConceptSpec {
-        SocialInsbaseConSpec(_code: code)
+        return SocialInsbaseConSpec(_code: self.code)
     }
 }
 
@@ -178,14 +179,14 @@ class HealthInspaymConProv : ConceptSpecProvider {
     }
 
     override func getSpec(period: IPeriod, version: VersionCode) -> ConceptSpec {
-        HealthInspaymConSpec(_code: code)
+        return HealthInspaymConSpec(_code: self.code)
     }
 }
 
 class HealthInspaymConSpec : ConceptSpec {
     init(_code: ConceptCode) {
         super.init(concept: _code, path: AmountBasisConSpec.constToPathArray(path: [
-            ExampleArticleConst.ARTICLE_HEALTH_INSBASE.rawValue
+            ExampleArticleConst.ARTICLE_HEALTH_INSBASE.rawValue,
         ]), result: HealthInspaymConSpec.conceptEval)
     }
     static func conceptEval(target: ITermTarget, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList {
@@ -202,14 +203,14 @@ class SocialInspaymConProv : ConceptSpecProvider {
     }
 
     override func getSpec(period: IPeriod, version: VersionCode) -> ConceptSpec {
-        SocialInspaymConSpec(_code: code)
+        return SocialInspaymConSpec(_code: self.code)
     }
 }
 
 class SocialInspaymConSpec : ConceptSpec {
     init(_code: ConceptCode) {
         super.init(concept: _code, path: AmountBasisConSpec.constToPathArray(path: [
-            ExampleArticleConst.ARTICLE_SOCIAL_INSBASE.rawValue
+            ExampleArticleConst.ARTICLE_SOCIAL_INSBASE.rawValue,
         ]), result: SocialInspaymConSpec.conceptEval)
     }
     static func conceptEval(target: ITermTarget, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList {
@@ -226,7 +227,7 @@ class TaxingAdvbaseConProv : ConceptSpecProvider {
     }
 
     override func getSpec(period: IPeriod, version: VersionCode) -> ConceptSpec {
-        TaxingAdvbaseConSpec(_code: code)
+        return TaxingAdvbaseConSpec(_code: self.code)
     }
 }
 
@@ -248,14 +249,14 @@ class TaxingAdvpaymConProv : ConceptSpecProvider {
     }
 
     override func getSpec(period: IPeriod, version: VersionCode) -> ConceptSpec {
-        TaxingAdvpaymConSpec(_code: code)
+        return TaxingAdvpaymConSpec(_code: self.code)
     }
 }
 
 class TaxingAdvpaymConSpec : ConceptSpec {
     init(_code: ConceptCode) {
         super.init(concept: _code, path: AmountBasisConSpec.constToPathArray(path: [
-            ExampleArticleConst.ARTICLE_TAXING_ADVBASE.rawValue
+            ExampleArticleConst.ARTICLE_TAXING_ADVBASE.rawValue,
         ]), result: TaxingAdvpaymConSpec.conceptEval)
     }
     static func conceptEval(target: ITermTarget, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList {
@@ -272,7 +273,7 @@ class IncomeGrossConProv : ConceptSpecProvider {
     }
 
     override func getSpec(period: IPeriod, version: VersionCode) -> ConceptSpec {
-        IncomeGrossConSpec(_code: code)
+        return IncomeGrossConSpec(_code: self.code)
     }
 }
 
@@ -294,17 +295,17 @@ class IncomeNettoConProv : ConceptSpecProvider {
     }
 
     override func getSpec(period: IPeriod, version: VersionCode) -> ConceptSpec {
-        IncomeNettoConSpec(_code: code)
+        return IncomeNettoConSpec(_code: self.code)
     }
 }
 
 class IncomeNettoConSpec : ConceptSpec {
     init(_code: ConceptCode) {
         super.init(concept: _code, path: AmountBasisConSpec.constToPathArray(path: [
+            ExampleArticleConst.ARTICLE_INCOME_GROSS.rawValue,
             ExampleArticleConst.ARTICLE_HEALTH_INSPAYM.rawValue,
             ExampleArticleConst.ARTICLE_SOCIAL_INSPAYM.rawValue,
             ExampleArticleConst.ARTICLE_TAXING_ADVPAYM.rawValue,
-            ExampleArticleConst.ARTICLE_INCOME_GROSS.rawValue
         ]), result: IncomeNettoConSpec.conceptEval)
     }
     static func conceptEval(target: ITermTarget, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList {
@@ -313,6 +314,4 @@ class IncomeNettoConSpec : ConceptSpec {
         return Array<BuilderResult>(arrayLiteral: Result.success(resultsValues))
     }
 }
-
-
 
