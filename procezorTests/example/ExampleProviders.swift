@@ -96,7 +96,7 @@ class AmountBasisConProv : ConceptSpecProvider {
 class AmountBasisConSpec : ConceptSpec {
     init(_code: ConceptCode) {
         super.init(concept: _code, path: AmountBasisConSpec.constToPathArray(path: [
-            ExampleArticleConst.ARTICLE_TIMESHT_WORKING.rawValue
+            ExampleArticleConst.ARTICLE_TIMESHT_WORKING.rawValue,
         ]), result: AmountBasisConSpec.conceptEval)
     }
     static func conceptEval(target: ITermTarget, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList {
@@ -185,7 +185,7 @@ class HealthInspaymConProv : ConceptSpecProvider {
 
 class HealthInspaymConSpec : ConceptSpec {
     init(_code: ConceptCode) {
-        super.init(concept: _code, path: AmountBasisConSpec.constToPathArray(path: [
+        super.init(concept: _code, path: HealthInspaymConSpec.constToPathArray(path: [
             ExampleArticleConst.ARTICLE_HEALTH_INSBASE.rawValue,
         ]), result: HealthInspaymConSpec.conceptEval)
     }
@@ -209,7 +209,7 @@ class SocialInspaymConProv : ConceptSpecProvider {
 
 class SocialInspaymConSpec : ConceptSpec {
     init(_code: ConceptCode) {
-        super.init(concept: _code, path: AmountBasisConSpec.constToPathArray(path: [
+        super.init(concept: _code, path: SocialInspaymConSpec.constToPathArray(path: [
             ExampleArticleConst.ARTICLE_SOCIAL_INSBASE.rawValue,
         ]), result: SocialInspaymConSpec.conceptEval)
     }
@@ -255,7 +255,7 @@ class TaxingAdvpaymConProv : ConceptSpecProvider {
 
 class TaxingAdvpaymConSpec : ConceptSpec {
     init(_code: ConceptCode) {
-        super.init(concept: _code, path: AmountBasisConSpec.constToPathArray(path: [
+        super.init(concept: _code, path: TaxingAdvpaymConSpec.constToPathArray(path: [
             ExampleArticleConst.ARTICLE_TAXING_ADVBASE.rawValue,
         ]), result: TaxingAdvpaymConSpec.conceptEval)
     }
@@ -301,7 +301,7 @@ class IncomeNettoConProv : ConceptSpecProvider {
 
 class IncomeNettoConSpec : ConceptSpec {
     init(_code: ConceptCode) {
-        super.init(concept: _code, path: AmountBasisConSpec.constToPathArray(path: [
+        super.init(concept: _code, path: IncomeNettoConSpec.constToPathArray(path: [
             ExampleArticleConst.ARTICLE_INCOME_GROSS.rawValue,
             ExampleArticleConst.ARTICLE_HEALTH_INSPAYM.rawValue,
             ExampleArticleConst.ARTICLE_SOCIAL_INSPAYM.rawValue,

@@ -153,3 +153,4 @@ class IncomeNettoResult : ExampleTermResult {
     }
 }
 
+

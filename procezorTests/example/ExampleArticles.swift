@@ -18,7 +18,7 @@ class TimeshtWorkingArtProv : ArticleSpecProvider {
 class TimeshtWorkingArtSpec : ArticleSpec {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_TIMESHT_WORKING.rawValue
     init (_code: ArticleCode) {
-        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: Array<Int32>())
+        super.init(code: _code.value, role: TimeshtWorkingArtSpec.CONCEPT_CODE, sums: Array<Int32>())
     }
 }
 
@@ -64,7 +64,7 @@ class PaymentBonusArtSpec : ArticleSpec {
             ExampleArticleConst.ARTICLE_SOCIAL_INSBASE.rawValue,
             ExampleArticleConst.ARTICLE_TAXING_ADVBASE.rawValue,
         ]
-        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: _sums)
+        super.init(code: _code.value, role: PaymentBonusArtSpec.CONCEPT_CODE, sums: _sums)
     }
 }
 
@@ -86,7 +86,7 @@ class PaymentBarterArtSpec : ArticleSpec {
             ExampleArticleConst.ARTICLE_SOCIAL_INSBASE.rawValue,
             ExampleArticleConst.ARTICLE_TAXING_ADVBASE.rawValue,
         ]
-        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: _sums)
+        super.init(code: _code.value, role: PaymentBarterArtSpec.CONCEPT_CODE, sums: _sums)
     }
 }
 
@@ -106,7 +106,7 @@ class AllowceHofficeArtSpec : ArticleSpec {
         let _sums = [
             ExampleArticleConst.ARTICLE_INCOME_NETTO.rawValue,
         ]
-        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: _sums)
+        super.init(code: _code.value, role: AllowceHofficeArtSpec.CONCEPT_CODE, sums: _sums)
     }
 }
 
@@ -123,7 +123,7 @@ class HealthInsbaseArtProv : ArticleSpecProvider {
 class HealthInsbaseArtSpec : ArticleSpec {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_HEALTH_INSBASE.rawValue
     init (_code: ArticleCode) {
-        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: Array<Int32>())
+        super.init(code: _code.value, role: HealthInsbaseArtSpec.CONCEPT_CODE, sums: Array<Int32>())
     }
 }
 
@@ -139,9 +139,8 @@ class SocialInsbaseArtProv : ArticleSpecProvider {
 
 class SocialInsbaseArtSpec : ArticleSpec {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_SOCIAL_INSBASE.rawValue
-
-    init(_code: ArticleCode) {
-        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: Array<Int32>())
+    init (_code: ArticleCode) {
+        super.init(code: _code.value, role: SocialInsbaseArtSpec.CONCEPT_CODE, sums: Array<Int32>())
     }
 }
 
@@ -158,7 +157,7 @@ class HealthInspaymArtProv : ArticleSpecProvider {
 class HealthInspaymArtSpec : ArticleSpec {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_HEALTH_INSPAYM.rawValue
     init (_code: ArticleCode) {
-        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: Array<Int32>())
+        super.init(code: _code.value, role: HealthInspaymArtSpec.CONCEPT_CODE, sums: Array<Int32>())
     }
 }
 
@@ -175,7 +174,7 @@ class SocialInspaymArtProv : ArticleSpecProvider {
 class SocialInspaymArtSpec : ArticleSpec {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_SOCIAL_INSPAYM.rawValue
     init (_code: ArticleCode) {
-        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: Array<Int32>())
+        super.init(code: _code.value, role: SocialInspaymArtSpec.CONCEPT_CODE, sums: Array<Int32>())
     }
 }
 
@@ -192,7 +191,7 @@ class TaxingAdvbaseArtProv : ArticleSpecProvider {
 class TaxingAdvbaseArtSpec : ArticleSpec {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_TAXING_ADVBASE.rawValue
     init (_code: ArticleCode) {
-        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: Array<Int32>())
+        super.init(code: _code.value, role: TaxingAdvbaseArtSpec.CONCEPT_CODE, sums: Array<Int32>())
     }
 }
 
@@ -209,7 +208,7 @@ class TaxingAdvpaymArtProv : ArticleSpecProvider {
 class TaxingAdvpaymArtSpec : ArticleSpec {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_TAXING_ADVPAYM.rawValue
     init (_code: ArticleCode) {
-        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: Array<Int32>())
+        super.init(code: _code.value, role: TaxingAdvpaymArtSpec.CONCEPT_CODE, sums: Array<Int32>())
     }
 }
 
@@ -226,7 +225,7 @@ class IncomeGrossArtProv : ArticleSpecProvider {
 class IncomeGrossArtSpec : ArticleSpec {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_INCOME_GROSS.rawValue
     init (_code: ArticleCode) {
-        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: Array<Int32>())
+        super.init(code: _code.value, role: IncomeGrossArtSpec.CONCEPT_CODE, sums: Array<Int32>())
     }
 }
 
@@ -243,7 +242,7 @@ class IncomeNettoArtProv : ArticleSpecProvider {
 class IncomeNettoArtSpec : ArticleSpec {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_INCOME_NETTO.rawValue
     init (_code: ArticleCode) {
-        super.init(code: _code.value, role: PaymentSalaryArtSpec.CONCEPT_CODE, sums: Array<Int32>())
+        super.init(code: _code.value, role: IncomeNettoArtSpec.CONCEPT_CODE, sums: Array<Int32>())
     }
 }
 
