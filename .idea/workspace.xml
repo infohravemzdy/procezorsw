@@ -3,30 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="67a64416-0c64-4534-afcd-9a50168fc11f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/procezor.podspec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/procezor.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/procezor.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/procezor.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/procezor.xcscheme" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/registry.constants/ArticleConst.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/registry_constants/ArticleConst.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/registry.constants/ConceptConst.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/registry_constants/ConceptConst.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/registry.constants/TermConstants.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/registry_constants/TermConstants.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/registry.factories/ArticleProviderConfig.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/registry_factories/ArticleProviderConfig.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/registry.factories/ArticleSpecFactory.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/registry_factories/ArticleSpecFactory.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/registry.factories/ConceptSpecFactory.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/registry_factories/ConceptSpecFactory.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/registry.factories/ISpecFactory.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/registry_factories/ISpecFactory.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/registry.factories/SpecFactory.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/registry_factories/SpecFactory.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/registry.providers/ArticleSpec.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/registry_providers/ArticleSpec.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/registry.providers/ArticleSpecProvider.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/registry_providers/ArticleSpecProvider.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/registry.providers/ConceptSpec.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/registry_providers/ConceptSpec.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/registry.providers/ConceptSpecProvider.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/registry_providers/ConceptSpecProvider.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/registry.providers/ISpecProvider.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/registry_providers/ISpecProvider.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/service_interfaces/IArticleDefine.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/service_interfaces/IArticleDefine.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/service_interfaces/IArticleSpec.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/service_interfaces/IArticleSpec.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/service_interfaces/ISpecSeqs.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/service_interfaces/ISpecSeqs.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/service_types/ArticleDefine.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/service_types/ArticleDefine.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/service_types/ArticleSeqs.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/service_types/ArticleSeqs.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/service_types/ArticleTerm.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/service_types/ArticleTerm.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/service_types/TermTarget.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/service_types/TermTarget.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezorTests/example/ExampleFactories.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezorTests/example/ExampleFactories.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezor/registry/DependencyGraph.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/registry/DependencyGraph.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezor/registry/IResultBuilder.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/registry/IResultBuilder.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezor/registry/ResultBuilder.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/registry/ResultBuilder.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezor/registry_providers/ConceptSpec.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/registry_providers/ConceptSpec.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezor/service/IServiceProcezor.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/service/IServiceProcezor.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezor/service/ServiceProcezor.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/service/ServiceProcezor.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezor/service_interfaces/IConceptSpec.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/service_interfaces/IConceptSpec.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezor/service_types/ContractTerm.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/service_types/ContractTerm.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezor/service_types/PositionTerm.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/service_types/PositionTerm.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +60,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
-  <component name="RunManager" selected="Application.procezor">
+  <component name="RunManager" selected="XCTest.All in procezorTests">
     <configuration name="procezor" type="AppleRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="procezor" TARGET_NAME="procezor" CONFIG_NAME="Debug" SCHEME_NAME="procezor" IS_LOCATION_SIMULATION_ALLOWED="true" LOCATION_SCENARIO_ID="com.apple.dt.IDEFoundation.CurrentLocationScenarioIdentifier" LOCATION_SCENARIO_TYPE="1" APPLICATION_LANGUAGE="IDELaunchSchemeLanguageUseSystemLanguage" APPLICATION_REGION="" MAKE_ACTIVE="TRUE" SHOULD_DEBUG_EXTENSIONS="false">
       <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
         <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
@@ -109,7 +94,7 @@
       <workItem from="1636193892816" duration="326000" />
       <workItem from="1636281038321" duration="9109000" />
       <workItem from="1636389093463" duration="2031000" />
-      <workItem from="1646303833899" duration="11866000" />
+      <workItem from="1646303833899" duration="18821000" />
     </task>
     <servers />
   </component>

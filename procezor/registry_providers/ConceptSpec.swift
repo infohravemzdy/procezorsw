@@ -3,6 +3,7 @@
 //
 
 import Foundation
+import legalios
 
 public class ConceptSpec : IConceptSpec, Comparable {
     public static func ==(lhs: ConceptSpec, rhs: ConceptSpec) -> Bool {
@@ -26,5 +27,16 @@ public class ConceptSpec : IConceptSpec, Comparable {
         self.code = concept
         self.path = path.map { $0 }
         self.resultDelegate = result
+    }
+    public func defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps, month: MonthCode,
+                                  contractTerms: Array<ContractTerm>, positionTerms: Array<PositionTerm>,
+                                  targets: Array<ITermTarget>, vars: VariantCode) -> Array<ITermTarget> {
+        let con = ContractCode.zero()
+        let pos = PositionCode.zero()
+
+        if (targets.count != 0) {
+            return Array<ITermTarget>()
+        }
+        return [TermTarget(_month: month, _contract: con, _position: pos, _variant: vars, _article: article, _concept: code)]
     }
 }

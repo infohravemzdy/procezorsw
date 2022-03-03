@@ -25,9 +25,9 @@ class ResultBuilder : IResultBuilder {
 
     var periodInit: IPeriod
 
-    var articleOrder: Array<ArticleCode>
+    var articleOrder: Array<ArticleTerm>
 
-    var articlePaths: Dictionary<ArticleCode, Array<ArticleDefine>>
+    var articlePaths: Dictionary<ArticleTerm, Array<ArticleDefine>>
 
     var articleModel: Array<ArticleSpec> = [ArticleSpec]()
     var conceptModel: Array<ConceptSpec> = [ConceptSpec]()
@@ -35,8 +35,8 @@ class ResultBuilder : IResultBuilder {
     init () {
         self.version = VersionCode.new()
         self.periodInit = Period.new()
-        self.articleOrder = [ArticleCode]()
-        self.articlePaths = [ArticleCode:Array<ArticleDefine>]()
+        self.articleOrder = [ArticleTerm]()
+        self.articlePaths = [ArticleTerm:Array<ArticleDefine>]()
     }
 
     func initWithPeriod(version: VersionCode,
@@ -57,22 +57,34 @@ class ResultBuilder : IResultBuilder {
         return true
     }
 
-    func getResults(ruleset: IBundleProps, targets: Array<ITermTarget>, finDefs: ArticleDefine) -> BuilderResultList {
-        let calculTargets = buildCalculsList(period: periodInit, targets: targets, finDefs: finDefs)
+    func getResults(ruleset: IBundleProps,
+                    contractTerms: Array<ContractTerm>, positionTerms: Array<PositionTerm>,
+                    targets: Array<ITermTarget>, calcArticles: Array<ArticleCode>) -> BuilderResultList {
+        let calculTargets = buildCalculsList(period: periodInit, ruleset: ruleset,
+                contractTerms: contractTerms, positionTerms: positionTerms,
+                targets: targets, calcArticles: calcArticles)
 
         let calculResults = buildResultsList(period: periodInit, ruleset: ruleset, calculs: calculTargets)
 
         return calculResults
     }
     private func buildCalculsList(
-        period: IPeriod,
+        period: IPeriod, ruleset: IBundleProps,
+        contractTerms: Array<ContractTerm>, positionTerms: Array<PositionTerm>,
         targets: Array<ITermTarget>,
-        finDefs: ArticleDefine) -> Array<ITermCalcul> {
-        let finDefine: ArticleDefine = ArticleDefine(defs: finDefs)
+        calcArticles: Array<ArticleCode>) -> Array<ITermCalcul> {
+        let specDefines: Array<ArticleSpec?> = calcArticles.map { a in articleModel.first { m in m.code == a } ?? nil }
 
-        let targetsSpec: Array<ITermTarget> = addFinDefToTargets(period: period, targets: targets.map { $0 }, finDefs: finDefine)
+        let calcDefines = specDefines.filter { s in (s != nil) }.map { t in t! }
+                .map { x in ArticleDefine(code: x.code.value, seqs: x.seqs.value, role: x.role.value) }
 
-        let targetsStep: Array<ITermTarget> = addExternToTargets(period: period, targets: targetsSpec)
+        let targetsSpec: Array<ITermTarget> = addFinDefToTargets(period: period, ruleset: ruleset,
+                contractTerms: contractTerms, positionTerms: positionTerms,
+                targets: targets.map { $0 }, calcDefines: calcDefines)
+
+        let targetsStep: Array<ITermTarget> = addExternToTargets(period: period, ruleset: ruleset,
+                contractTerms: contractTerms, positionTerms: positionTerms,
+                targets: targetsSpec)
 
         let calculsList: Array<ITermCalcul> = addTargetToCalculs(targets: targetsStep)
 
@@ -91,14 +103,121 @@ class ResultBuilder : IResultBuilder {
     private func mergeResults(results: BuilderResultList, resultValues: BuilderResult...) -> BuilderResultList {
         return mergeResults(results: results, resultValues: resultValues)
     }
-    private func addFinDefToTargets(period: IPeriod, targets: Array<ITermTarget>, finDefs: ArticleDefine) -> Array<ITermTarget> {
-        return mergeItemPendings(period: period, initRes: targets, articleDefs: finDefs)
+    private func addFinDefToTargets(period: IPeriod, ruleset: IBundleProps,
+                                    contractTerms: Array<ContractTerm>, positionTerms: Array<PositionTerm>,
+                                    targets: Array<ITermTarget>, calcDefines: Array<ArticleDefine>) -> Array<ITermTarget> {
+        return mergeListPendings(period: period, ruleset: ruleset,
+                contractTerms: contractTerms, positionTerms: positionTerms,
+                initRes: targets, calcDefines: calcDefines)
     }
-    private func compareTargets(topoOrders: Array<ArticleCode>) -> (ITermTarget, ITermTarget) -> Bool {
-        let lessThan: (ITermTarget, ITermTarget) -> Bool = { (x, y) in
-            let xIndex = topoOrders.firstIndex(of: x.article)
+    private func addExternToTargets(period: IPeriod, ruleset: IBundleProps,
+                                    contractTerms: Array<ContractTerm>, positionTerms: Array<PositionTerm>,
+                                    targets: Array<ITermTarget>) -> Array<ITermTarget> {
+        let targetsInit: Array<ITermTarget> = targets.map { $0 }
 
-            let yIndex = topoOrders.firstIndex(of: y.article)
+        let targetList = targets.reduce(targetsInit) {agr, item in
+            return  mergePendings(period: period, ruleset: ruleset,
+                    contractTerms: contractTerms, positionTerms: positionTerms,
+                    initRes: agr, target: item)}.map { $0 }
+
+        let targetSort = targetList.sorted (by: compareTargets(topoOrders: articleOrder))
+
+        return targetSort
+    }
+    private func addDefinesToTargets(period: IPeriod, ruleset: IBundleProps,
+                                     contractTerms: Array<ContractTerm>, positionTerms: Array<PositionTerm>,
+                                     targets: Array<ITermTarget>, defines: Array<ArticleDefine>) -> Array<ITermTarget>
+    {
+        return defines.flatMap { x in
+            getTargetList(period: period, ruleset: ruleset, conceptsModel: conceptModel,
+                    contractTerms: contractTerms, positionTerms: positionTerms,
+                    targets: targets.filter {t in t.article == x.code}, article: x.code, concept: x.role).map { $0 }
+        }
+    }
+    private func addTargetToCalculs(targets: Array<ITermTarget>) -> Array<ITermCalcul> {
+        let targetsRets = targets.map { it -> ITermCalcul in
+            let articleSpec = articleModel.first {a in (a.code == it.article)}
+            return TermCalcul(target: it, spec: articleSpec, resultDelegate: getCalculFunc(conceptsModel: conceptModel, concept: it.concept)) }
+        return targetsRets.map { $0 }
+    }
+    private func mergePendings(period: IPeriod, ruleset: IBundleProps,
+                               contractTerms: Array<ContractTerm>, positionTerms: Array<PositionTerm>,
+                               initRes: Array<ITermTarget>, target: ITermTarget) -> Array<ITermTarget> {
+        var resultList: Array<ITermTarget> = initRes.map { $0 }
+
+        let pendingsSpec = articlePaths.first { k, v in return k.code == target.article }
+        let pendingsPath = pendingsSpec?.value ?? nil
+
+        if (pendingsPath != nil) {
+            resultList = pendingsPath!.reduce(resultList) { agr, def in
+                return mergeItemPendings(period: period, ruleset: ruleset,
+                        contractTerms: contractTerms, positionTerms: positionTerms,
+                        initRes: agr, articleDefs: def).map { $0 }}
+        }
+        return resultList
+    }
+    private func mergeItemPendings(period: IPeriod, ruleset: IBundleProps,
+                                   contractTerms: Array<ContractTerm>, positionTerms: Array<PositionTerm>,
+                                   initRes: Array<ITermTarget>, articleDefs: ArticleDefine) -> Array<ITermTarget> {
+        var resultList: Array<ITermTarget> = initRes.map { $0 }
+
+        let initTargets = initRes.filter { x in return x.article == articleDefs.code }
+
+        let targetList = getTargetList(period: period, ruleset: ruleset, conceptsModel: conceptModel,
+                contractTerms: contractTerms, positionTerms: positionTerms,
+                targets: initTargets, article: articleDefs.code, concept: articleDefs.role)
+
+        resultList = (resultList + targetList)
+
+        return resultList
+    }
+    private func mergeListPendings(period: IPeriod, ruleset: IBundleProps,
+                                   contractTerms: Array<ContractTerm>, positionTerms: Array<PositionTerm>,
+                                   initRes: Array<ITermTarget>, calcDefines: Array<ArticleDefine>) -> Array<ITermTarget> {
+        var resultList: Array<ITermTarget> = initRes.map { $0 }
+
+        let defineList = calcDefines.filter {x in initRes.first {t in t.article == x.code}==nil}
+
+        let targetList = addDefinesToTargets(period: period, ruleset: ruleset,
+                contractTerms: contractTerms, positionTerms: positionTerms,
+                targets: initRes, defines: defineList)
+
+        resultList = (resultList + targetList)
+
+        return resultList
+    }
+    private func getCalculFunc(conceptsModel: Array<ConceptSpec>, concept: ConceptCode) -> ResultFunc? {
+        let conceptSpec = conceptsModel.first { a in return (a.code == concept) }
+
+        return conceptSpec?.resultDelegate ?? notFoundCalculFunc
+    }
+    private func getTargetList(period: IPeriod, ruleset: IBundleProps, conceptsModel: Array<ConceptSpec>,
+                               contractTerms: Array<ContractTerm>, positionTerms: Array<PositionTerm>,
+                               targets: Array<ITermTarget>, article: ArticleCode, concept:ConceptCode) -> Array<ITermTarget> {
+        let monthCode = MonthCode.get(period.code)
+        let variant = VariantCode.get(1)
+
+        let conceptSpec = conceptsModel.first {a in a.code.value == concept.value }
+        if (conceptSpec == nil) {
+            let contract = ContractCode.new()
+            let position = PositionCode.new()
+            return [TermTarget(_month: monthCode, _contract: contract, _position: position, _variant: variant, _article: article, _concept: concept)]
+        }
+        return conceptSpec!.defaultTargetList(article: article, period: period, ruleset: ruleset, month: monthCode,
+                contractTerms: contractTerms, positionTerms: positionTerms,
+                targets: targets, vars: variant)
+    }
+
+    private func notFoundCalculFunc(target: ITermTarget, spec: ArticleSpec?, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList {
+        let resultError = TermResultError.CreateNoResultFuncError(period: period, target: target)
+        return [.failure(resultError)]
+    }
+    private func compareTargets(topoOrders: Array<ArticleTerm>) -> (ITermTarget, ITermTarget) -> Bool {
+        let codeOrders: Array<ArticleCode> = topoOrders.map { $0.code }
+        let lessThan: (ITermTarget, ITermTarget) -> Bool = { (x, y) in
+            let xIndex = codeOrders.firstIndex(of: x.article)
+
+            let yIndex = codeOrders.firstIndex(of: y.article)
 
             var compareIndex = 0
 
@@ -134,63 +253,5 @@ class ResultBuilder : IResultBuilder {
             return compareIndex < 0
         }
         return lessThan
-    }
-    private func addExternToTargets(period: IPeriod, targets: Array<ITermTarget>) -> Array<ITermTarget> {
-        let targetsInit: Array<ITermTarget> = targets.map { $0 }
-
-        let targetList = targets.reduce(targetsInit) {agr, item in
-            return  mergePendings(period: period, initRes: agr, target: item)}.map { $0 }
-
-        let targetSort = targetList.sorted (by: compareTargets(topoOrders: articleOrder))
-
-        return targetSort
-    }
-    private func addTargetToCalculs(targets: Array<ITermTarget>) -> Array<ITermCalcul> {
-        let targetsRets = targets.map { it -> ITermCalcul in
-            let articleSpec = articleModel.first {a in (a.code == it.article)}
-            return TermCalcul(target: it, spec: articleSpec, resultDelegate: getCalculFunc(conceptsModel: conceptModel, concept: it.concept)) }
-        return targetsRets.map { $0 }
-    }
-    private func mergePendings(period: IPeriod, initRes: Array<ITermTarget>, target: ITermTarget) -> Array<ITermTarget> {
-        var resultList: Array<ITermTarget> = initRes.map { $0 }
-
-        let pendingsSpec = articlePaths.first { k, v in return k == target.article }
-        let pendingsPath = pendingsSpec?.value ?? nil
-
-        if (pendingsPath != nil) {
-            resultList = pendingsPath!.reduce(resultList) { agr, def in
-                return mergeItemPendings(period: period, initRes: agr, articleDefs: def).map { $0 }}
-        }
-        return resultList
-    }
-    private func mergeItemPendings(period: IPeriod, initRes: Array<ITermTarget>, articleDefs: ArticleDefine) -> Array<ITermTarget> {
-        let monthCode = MonthCode.get(period.code)
-
-        let contract = ContractCode.new()
-        let position = PositionCode.new()
-
-        var resultList: Array<ITermTarget> = initRes.map { $0 }
-
-        let initTarget = initRes.first { x in return x.article == articleDefs.code }
-
-        if (initTarget == nil) {
-            let variant = VariantCode.get(1)
-
-            let resultItem = TermTarget(_month: monthCode, _contract: contract, _position: position,
-                    _variant: variant, _article: articleDefs.code, _concept: articleDefs.role)
-
-            resultList = (resultList + [resultItem])
-        }
-
-        return resultList
-    }
-    private func getCalculFunc(conceptsModel: Array<ConceptSpec>, concept: ConceptCode) -> ResultFunc? {
-        let conceptSpec = conceptsModel.first { a in return (a.code == concept) }
-
-        return conceptSpec?.resultDelegate ?? notFoundCalculFunc
-    }
-    private func notFoundCalculFunc(target: ITermTarget, spec: ArticleSpec?, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList {
-        let resultError = TermResultError.CreateNoResultFuncError(period: period, target: target)
-        return [.failure(resultError)]
     }
 }

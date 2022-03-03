@@ -7,7 +7,13 @@ import legalios
 
 protocol IServiceProcezor {
     var version: VersionCode { get }
-    var finDefs: ArticleDefine { get }
+    var calcArticles: Array<ArticleCode> { get }
+    func builderOrder() -> Array<ArticleTerm>
+    func builderPaths() -> Dictionary<ArticleTerm, Array<ArticleDefine>>
+
+    func getContractTerms(period: IPeriod, targets: ITermTargetList) -> Array<ContractTerm>
+    func getPositionTerms(period: IPeriod, contracts: Array<ContractTerm>, targets: ITermTargetList) -> Array<PositionTerm>
+
     func getResults(period: IPeriod, ruleset: IBundleProps, targets: ITermTargetList) -> BuilderResultList
     func initWithPeriod(period: IPeriod) -> Bool
     func buildFactories() -> Bool

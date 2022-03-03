@@ -4,7 +4,7 @@
 
 import Foundation
 
-class ContractTerm : IContractTerm {
+public class ContractTerm : IContractTerm {
     public let contract: ContractCode
     public let dateFrom: Date?
     public let dateStop: Date?

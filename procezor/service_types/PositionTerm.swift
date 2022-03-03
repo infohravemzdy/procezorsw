@@ -4,7 +4,7 @@
 
 import Foundation
 
-class PositionTerm : IPositionTerm {
+public class PositionTerm : IPositionTerm {
     public let contract: ContractCode
     public let position: PositionCode
     public let baseTerm: IContractTerm?

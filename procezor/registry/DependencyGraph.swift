@@ -5,8 +5,8 @@
 import Foundation
 
 struct ArticleEdge : Hashable {
-    let start: ArticleCode
-    let stops: ArticleCode
+    let start: ArticleTerm
+    let stops: ArticleTerm
 
     func hash(into hasher: inout Hasher) {
         hasher.combine(start)
@@ -38,11 +38,12 @@ class Queue<T> {
 
 
 class DependencyGraph {
-    private func compareDefines(topoOrders: Array<ArticleCode>) -> (ArticleDefine, ArticleDefine) -> Bool {
+    private func compareDefines(topoOrders: Array<ArticleTerm>) -> (ArticleDefine, ArticleDefine) -> Bool {
+        let codeOrders: Array<ArticleCode> = topoOrders.map { $0.code }
         let lessThan: (ArticleDefine, ArticleDefine) -> Bool = { (x, y) in
-            let xIndex = topoOrders.firstIndex(of: x.code)
+            let xIndex = codeOrders.firstIndex(of: x.code)
 
-            let yIndex = topoOrders.firstIndex(of: y.code)
+            let yIndex = codeOrders.firstIndex(of: y.code)
 
             var compareIndex = 0
 
@@ -80,8 +81,8 @@ class DependencyGraph {
         return lessThan
     }
     func initGraphModel(articlesModel: Array<ArticleSpec>, conceptsModel: Array<ConceptSpec>)
-                    -> (Array<ArticleCode>, Dictionary<ArticleCode, Array<ArticleDefine>>) {
-        let vertModel: Array<ArticleCode> = createVertModel(articlesModel: articlesModel)
+                    -> (Array<ArticleTerm>, Dictionary<ArticleTerm, Array<ArticleDefine>>) {
+        let vertModel: Array<ArticleTerm> = createVertModel(articlesModel: articlesModel)
         let edgeModel: Array<ArticleEdge> = createEdgeModel(articlesModel: articlesModel, conceptsModel: conceptsModel)
         let pendModel: Array<ArticleEdge> = createPendModel(articlesModel: articlesModel, conceptsModel: conceptsModel)
 
@@ -90,8 +91,8 @@ class DependencyGraph {
 
         return (order, paths)
     }
-    private func createVertModel(articlesModel: Array<ArticleSpec>) -> Array<ArticleCode> {
-        return articlesModel.map { a in return a.code }.map { $0 }.sorted()
+    private func createVertModel(articlesModel: Array<ArticleSpec>) -> Array<ArticleTerm> {
+        return articlesModel.map { a in return a.term() }.map { $0 }.sorted()
     }
     private func createEdgeModel(articlesModel: Array<ArticleSpec>, conceptsModel: Array<ConceptSpec>) -> Array<ArticleEdge> {
         func edgeSorter(x:ArticleEdge, y:ArticleEdge) -> Bool {
@@ -103,7 +104,7 @@ class DependencyGraph {
         let initEdge: Array<ArticleEdge> = []
 
         return articlesModel.reduce(initEdge) { agr, x in
-            return mergeEdges(conceptsModel: conceptsModel, agr: agr, article: x) }
+            return mergeEdges(articlesModel: articlesModel, conceptsModel: conceptsModel, agr: agr, article: x) }
                 .sorted(by: edgeSorter)
     }
     private func createPendModel(articlesModel: Array<ArticleSpec>, conceptsModel: Array<ConceptSpec>) -> Array<ArticleEdge> {
@@ -116,38 +117,38 @@ class DependencyGraph {
         let initEdge: Array<ArticleEdge> = []
 
         return articlesModel.reduce(initEdge) { agr, x in
-                    return mergePends(conceptsModel: conceptsModel, agr: agr, article: x) }
+                    return mergePends(articlesModel: articlesModel, conceptsModel: conceptsModel, agr: agr, article: x) }
                 .sorted(by: edgeSorter)
     }
-    private func createPathModel(articlesModel: Array<ArticleSpec>, vertModel: Array<ArticleCode>, edgeModel: Array<ArticleEdge>, vertOrder: Array<ArticleCode>) -> Dictionary<ArticleCode, Array<ArticleDefine>> {
-        return Dictionary<ArticleCode, Array<ArticleDefine>>(uniqueKeysWithValues: vertModel.map { x in
+    private func createPathModel(articlesModel: Array<ArticleSpec>, vertModel: Array<ArticleTerm>, edgeModel: Array<ArticleEdge>, vertOrder: Array<ArticleTerm>) -> Dictionary<ArticleTerm, Array<ArticleDefine>> {
+        return Dictionary<ArticleTerm, Array<ArticleDefine>>(uniqueKeysWithValues: vertModel.map { x in
             return (x, mergePaths(articlesModel: articlesModel, edgeModel: edgeModel, vertOrder: vertOrder, article: x)) })
     }
-    private func mergeEdges(conceptsModel: Array<ConceptSpec>, agr: Array<ArticleEdge>,  article: ArticleSpec) -> Array<ArticleEdge>
+    private func mergeEdges(articlesModel: Array<ArticleSpec>, conceptsModel: Array<ConceptSpec>, agr: Array<ArticleEdge>,  article: ArticleSpec) -> Array<ArticleEdge>
     {
         var result = Set<ArticleEdge>(agr).map { $0 }
         let concept = conceptsModel.first { c in return c.code == article.role }
 
         if (concept != nil) {
-            result = Set<ArticleEdge>(article.sums.map { s in return ArticleEdge(start: article.code, stops: s) } + result).map { $0 }
+            result = Set<ArticleEdge>(article.sums.map { s in return ArticleEdge(start: article.term(), stops: getArticleTerm(article: s, articlesModel: articlesModel)) } + result).map { $0 }
 
-            result = Set<ArticleEdge>(concept!.path.map { p in return ArticleEdge(start: p, stops: article.code) } + result).map { $0 }
+            result = Set<ArticleEdge>(concept!.path.map { p in return ArticleEdge(start: getArticleTerm(article: p, articlesModel: articlesModel), stops: article.term()) } + result).map { $0 }
         }
         return result
     }
-    private func mergePends(conceptsModel: Array<ConceptSpec>, agr: Array<ArticleEdge>,  article: ArticleSpec) -> Array<ArticleEdge>
+    private func mergePends(articlesModel: Array<ArticleSpec>, conceptsModel: Array<ConceptSpec>, agr: Array<ArticleEdge>,  article: ArticleSpec) -> Array<ArticleEdge>
     {
         var result = Set<ArticleEdge>(agr).map { $0 }
         let concept = conceptsModel.first { c in return c.code == article.role }
 
         if (concept != nil) {
-            result = Set<ArticleEdge>(concept!.path.map { p in return ArticleEdge(start: p, stops: article.code) } + result).map { $0 }
+            result = Set<ArticleEdge>(concept!.path.map { p in return ArticleEdge(start: getArticleTerm(article: p, articlesModel: articlesModel), stops: article.term()) } + result).map { $0 }
         }
         return result
     }
-    private func mergePaths(articlesModel: Array<ArticleSpec>, edgeModel: Array<ArticleEdge>, vertOrder: Array<ArticleCode>, article: ArticleCode) -> Array<ArticleDefine> {
+    private func mergePaths(articlesModel: Array<ArticleSpec>, edgeModel: Array<ArticleEdge>, vertOrder: Array<ArticleTerm>, article: ArticleTerm) -> Array<ArticleDefine> {
         let articleInit: Array<ArticleDefine> = edgeModel.filter { e in return (e.stops == article) }
-                .map { e in return getArticleDefs(article: e.start, articlesModel: articlesModel) }.map { $0 }
+                .map { e in return getArticleDefs(article: e.start.code, articlesModel: articlesModel) }.map { $0 }
 
         let articlePath = articleInit.reduce(articleInit) { agr, x in
             return mergeVert(articlesModel: articlesModel, edgeModel: edgeModel, resultVert: agr, defs: x) }
@@ -155,13 +156,20 @@ class DependencyGraph {
         return Set<ArticleDefine>(articlePath).sorted(by: compareDefines(topoOrders: vertOrder.map { $0 }))
     }
     private func mergeVert(articlesModel: Array<ArticleSpec>, edgeModel: Array<ArticleEdge>, resultVert: Array<ArticleDefine>, defs: ArticleDefine) -> Array<ArticleDefine> {
-        let resultInit: Array<ArticleDefine> = edgeModel.filter { e in return (e.stops == defs.code) }
-                .map { e in return  getArticleDefs(article: e.start, articlesModel: articlesModel) }.map { $0 }
+        let resultInit: Array<ArticleDefine> = edgeModel.filter { e in return (e.stops == defs.term()) }
+                .map { e in return  getArticleDefs(article: e.start.code, articlesModel: articlesModel) }.map { $0 }
 
         let resultList = resultInit.reduce(resultInit) { agr, x in
             return mergeVert(articlesModel: articlesModel, edgeModel: edgeModel, resultVert: agr, defs: x) }
 
         return (resultVert + resultList + [defs]).map { $0 }
+    }
+    private func getArticleTerm(article: ArticleCode, articlesModel: Array<ArticleSpec>) -> ArticleTerm {
+        let articleSpec = articlesModel.first { m in return (m.code == article) }
+        if (articleSpec == nil) {
+            return ArticleTerm.zero()
+        }
+        return articleSpec!.term()
     }
     private func getArticleDefs(article: ArticleCode, articlesModel: Array<ArticleSpec>) -> ArticleDefine {
         let articleSpec = articlesModel.first { m in return (m.code == article) }
@@ -170,14 +178,14 @@ class DependencyGraph {
         }
         return articleSpec!.defs()
     }
-    private func createTopoModel(vertModel: Array<ArticleCode>, edgeModel: Array<ArticleEdge>) -> Array<ArticleCode>
+    private func createTopoModel(vertModel: Array<ArticleTerm>, edgeModel: Array<ArticleEdge>) -> Array<ArticleTerm>
     {
-        var articlesOrder = Array<ArticleCode>()
+        var articlesOrder = Array<ArticleTerm>()
 
-        var degrees = Dictionary<ArticleCode, Int>(uniqueKeysWithValues: vertModel.map { x in
+        var degrees = Dictionary<ArticleTerm, Int>(uniqueKeysWithValues: vertModel.map { x in
             return (x, edgeModel.reduce(0) { agr, e in return (e.stops == x) ? agr+1 : agr } ) } )
 
-        let queues = Queue<ArticleCode>(items: degrees.filter { x in
+        let queues = Queue<ArticleTerm>(items: degrees.filter { x in
             return (x.value == 0) }.map { x in x.key }.sorted())
 
         var index = 0
@@ -201,7 +209,7 @@ class DependencyGraph {
         }
         if (index != vertModel.count)
         {
-            return [ArticleCode]()
+            return [ArticleTerm]()
         }
         return articlesOrder
     }

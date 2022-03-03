@@ -8,9 +8,10 @@ import legalios
 protocol IResultBuilder {
     var version: VersionCode { get }
     var periodInit: IPeriod { get }
-    var articleOrder: Array<ArticleCode> { get }
-    var articlePaths: Dictionary<ArticleCode, Array<ArticleDefine>> { get }
+    var articleOrder: Array<ArticleTerm> { get }
+    var articlePaths: Dictionary<ArticleTerm, Array<ArticleDefine>> { get }
 
     func initWithPeriod(version: VersionCode, period: IPeriod, articleFactory: ArticleSpecFactory, conceptFactory: ConceptSpecFactory) -> Bool
-    func getResults(ruleset: IBundleProps, targets: Array<ITermTarget>, finDefs: ArticleDefine) -> BuilderResultList
+    func getResults(ruleset: IBundleProps, contractTerms: Array<ContractTerm>, positionTerms: Array<PositionTerm>,
+                    targets: Array<ITermTarget>, calcArticles: Array<ArticleCode>) -> BuilderResultList
 }

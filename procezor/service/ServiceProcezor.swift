@@ -8,20 +8,35 @@ import legalios
 class ServiceProcezor : IServiceProcezor {
     public let version: VersionCode
 
-    public let finDefs: ArticleDefine
+    public let calcArticles: Array<ArticleCode>
 
     let builder = ResultBuilder()
     var articleFactory: ArticleSpecFactory? = nil
     var conceptFactory: ConceptSpecFactory? = nil
 
-    init (_version: VersionCode, _finDefs: ArticleDefine) {
+    init (_version: VersionCode, _calcArticles: Array<ArticleCode>) {
         self.version = _version
-        self.finDefs = _finDefs
+        self.calcArticles = _calcArticles
         let buildSuccess = self.buildFactories()
         if buildSuccess == false {
             // log error
         }
     }
+    func builderOrder() -> Array<ArticleTerm> {
+        return builder.articleOrder
+    }
+    func builderPaths() -> Dictionary<ArticleTerm, Array<ArticleDefine>> {
+        return builder.articlePaths
+    }
+
+    func getContractTerms(period: IPeriod, targets: ITermTargetList) -> Array<ContractTerm> {
+        return []
+    }
+
+    func getPositionTerms(period: IPeriod, contracts: Array<ContractTerm>, targets: ITermTargetList) -> Array<PositionTerm> {
+        return []
+    }
+
     func getResults(period: IPeriod, ruleset: IBundleProps, targets: ITermTargetList) -> BuilderResultList {
         var results: BuilderResultList = [BuilderResult]()
 
@@ -30,7 +45,12 @@ class ServiceProcezor : IServiceProcezor {
         if (!success) {
             return results
         }
-        results = builder.getResults(ruleset: ruleset, targets: targets, finDefs: finDefs)
+        let contractTerms = getContractTerms(period: period, targets: targets)
+        let positionTerms = getPositionTerms(period: period, contracts: contractTerms, targets: targets)
+
+        results = builder.getResults(ruleset: ruleset,
+                contractTerms: contractTerms, positionTerms: positionTerms,
+                targets: targets, calcArticles: calcArticles)
         return results
     }
 
