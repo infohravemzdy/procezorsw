@@ -4,7 +4,7 @@
 
 import Foundation
 
-class ArticleSeqs : Comparable, Hashable, ISpecSeqs {
+public class ArticleSeqs: Comparable, Hashable, ISpecSeqs {
     public let value: Int16
 
     public static func ==(lhs: ArticleSeqs, rhs: ArticleSeqs) -> Bool {
@@ -39,3 +39,4 @@ class ArticleSeqs : Comparable, Hashable, ISpecSeqs {
         hasher.combine(value)
     }
 }
+

@@ -4,5 +4,5 @@
 
 import Foundation
 
-protocol ISpecSeqs : ICodeValue where T == Int16 {
+public protocol ISpecSeqs : ICodeValue where T == Int16 {
 }

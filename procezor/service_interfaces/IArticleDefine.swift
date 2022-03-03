@@ -5,8 +5,8 @@
 import Foundation
 
 public protocol IArticleDefine : Hashable {
-    var code : ArticleCode { get }
-    var role : ConceptCode { get }
-
-    var hashValue: Int { get }
+    var code: ArticleCode { get }
+    var seqs: ArticleSeqs { get }
+    var role: ConceptCode { get }
+    func term() -> ArticleTerm
 }

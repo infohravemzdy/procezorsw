@@ -16,21 +16,29 @@ public class ArticleSpec : IArticleSpec, Comparable {
 
     public let role: ConceptCode
 
+    public let seqs: ArticleSeqs
+
     public let sums: Array<ArticleCode>
 
-    public func defs() -> ArticleDefine {
-        return ArticleDefine(code: code.value, role: role.value)
+    public func term() -> ArticleTerm {
+        return ArticleTerm(code: code.value, seqs: seqs.value)
     }
 
-    init (article: ArticleCode, concept: ConceptCode, sums: Array<ArticleCode>) {
+    public func defs() -> ArticleDefine {
+        return ArticleDefine(code: code.value, seqs: seqs.value, role: role.value)
+    }
+
+    init (article: ArticleCode, sequens: ArticleSeqs, concept: ConceptCode, sums: Array<ArticleCode>) {
         self.code = article
         self.role = concept
+        self.seqs = sequens
         self.sums = sums.map { $0 }
     }
 
-    init (code: Int32, role: Int32,  sums: Array<Int32>) {
+    init (code: Int32, seqs: Int16, role: Int32,  sums: Array<Int32>) {
         self.code = ArticleCode.get(code)
         self.role = ConceptCode.get(role)
+        self.seqs = ArticleSeqs.get(seqs)
         self.sums = ArticleSpec.constToSumsArray(sums)
     }
 

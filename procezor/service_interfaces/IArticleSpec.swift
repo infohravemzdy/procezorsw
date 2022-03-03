@@ -6,5 +6,6 @@ import Foundation
 
 public protocol IArticleSpec : ISpecDefine {
     var sums: Array<ArticleCode> { get }
+    func term() -> ArticleTerm
     func defs() -> ArticleDefine
 }

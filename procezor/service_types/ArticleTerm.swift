@@ -4,7 +4,7 @@
 
 import Foundation
 
-class ArticleTerm : Comparable, Hashable {
+public class ArticleTerm : Comparable, Hashable {
     public let code: ArticleCode
     public let seqs: ArticleSeqs
 

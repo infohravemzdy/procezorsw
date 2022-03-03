@@ -7,10 +7,6 @@ import Foundation
 public class TermTarget : TermSymbol, ITermTarget {
     public let concept: ConceptCode
 
-    public func defs() -> ArticleDefine {
-        return ArticleDefine(code: article, role: concept)
-    }
-
     init (_month: MonthCode,
           _contract: ContractCode,
           _position: PositionCode,
