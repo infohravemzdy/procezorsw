@@ -5,7 +5,7 @@
 import Foundation
 import legalios
 
-public typealias ResultFunc = (ITermTarget, IPeriod, IBundleProps, BuilderResultList) -> BuilderResultList
+public typealias ResultFunc = (ITermTarget, ArticleSpec?, IPeriod, IBundleProps, BuilderResultList) -> BuilderResultList
 
 public protocol IConceptSpec : ISpecDefine {
     var code : ConceptCode { get }

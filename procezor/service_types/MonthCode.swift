@@ -19,6 +19,9 @@ public class MonthCode : Comparable, ICodeValue {
         self.value = value
     }
 
+    static func zero() -> MonthCode {
+        return new()
+    }
     static func new() -> MonthCode {
         return MonthCode(0)
     }

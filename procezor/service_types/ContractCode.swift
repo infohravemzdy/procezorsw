@@ -19,6 +19,9 @@ public class ContractCode : Comparable, ICodeValue {
         self.value = value
     }
 
+    static func zero() -> ContractCode {
+        return new()
+    }
     static func new() -> ContractCode {
         return ContractCode(0)
     }

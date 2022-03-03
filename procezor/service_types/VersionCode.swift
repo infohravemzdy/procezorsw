@@ -23,6 +23,9 @@ public class VersionCode : Comparable, ICodeValue {
         self.value = value
     }
 
+    static func zero() -> VersionCode {
+        return new()
+    }
     static func new() -> VersionCode {
         return VersionCode(0)
     }

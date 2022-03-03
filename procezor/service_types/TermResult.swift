@@ -8,19 +8,13 @@ import legalios
 public class TermResult : TermSymbol, ITermResult {
     public let target: ITermTarget?
 
+    public let spec: ArticleSpec?
+
     public let concept: ConceptCode
 
-    public let resultValue: Int32
-
-    public let resultBasis: Int32
-
-    public let resultDescr: String
-
-    init (_target: ITermTarget?,
-          _value: Int32,
-          _basis: Int32,
-          _descr: String) {
+    init (_target: ITermTarget?, _spec: ArticleSpec?) {
         self.target = _target
+        self.spec = _spec
 
         let _monthCode = target?.monthCode ?? MonthCode.new()
         let _contract = target?.contract ?? ContractCode.new()
@@ -30,9 +24,6 @@ public class TermResult : TermSymbol, ITermResult {
         let _concept = target?.concept ?? ConceptCode.new()
 
         self.concept = _concept
-        self.resultValue = _value
-        self.resultBasis = _basis
-        self.resultDescr = _descr
 
         super.init(_month: _monthCode,
                 _contract: _contract,

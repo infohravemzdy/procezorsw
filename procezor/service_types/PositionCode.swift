@@ -19,6 +19,9 @@ public class PositionCode : Comparable, ICodeValue {
         self.value = value
     }
 
+    static func zero() -> PositionCode {
+        return new()
+    }
     static func new() -> PositionCode {
         return PositionCode(0)
     }

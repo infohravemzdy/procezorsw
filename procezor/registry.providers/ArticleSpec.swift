@@ -4,7 +4,7 @@
 
 import Foundation
 
-class ArticleSpec : IArticleSpec, Comparable {
+public class ArticleSpec : IArticleSpec, Comparable {
     public static func ==(lhs: ArticleSpec, rhs: ArticleSpec) -> Bool {
         lhs.code == rhs.code
     }

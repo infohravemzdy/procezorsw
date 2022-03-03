@@ -5,61 +5,6 @@
 import Foundation
 import  legalios
 
-class ExampleTermTarget : TermTarget {
-    override init (_month: MonthCode,
-                   _contract: ContractCode,
-                   _position: PositionCode,
-                   _variant: VariantCode,
-                   _article: ArticleCode,
-                   _concept: ConceptCode,
-                   _basis: Int32,
-                   _descr: String) {
-        super.init(_month: _month,
-                _contract: _contract,
-                _position: _position,
-                _variant: _variant,
-                _article: _article,
-                _concept: _concept,
-                _basis: _basis,
-                _descr: _descr)
-    }
-    convenience init (_month: MonthCode,
-                      _contract: ContractCode,
-                      _position: PositionCode,
-                      _variant: VariantCode,
-                      _article: ArticleCode,
-                      _concept: ConceptCode) {
-        self.init(_month: _month,
-                _contract: _contract,
-                _position: _position,
-                _variant: _variant,
-                _article: _article,
-                _concept: _concept,
-                _basis: 0,
-                _descr: "")
-    }
-    public override func articleDescr() -> String {
-        getArticleSymbol(item: article.value)
-    }
-
-    public override func conceptDescr() -> String {
-        getConceptSymbol(item: concept.value)
-    }
-}
-
-class ExampleTermResult : TermResult {
-    override init(_target: ITermTarget?, _value: Int32, _basis: Int32, _descr: String) {
-        super.init(_target: _target, _value: _value, _basis: _basis, _descr: _descr)
-    }
-    public override func articleDescr() -> String {
-        getArticleSymbol(item: article.value)
-    }
-
-    public override func conceptDescr() -> String {
-        getConceptSymbol(item: concept.value)
-    }
-}
-
 class TimeshtWorkingConProv : ConceptSpecProvider {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_TIMESHT_WORKING.rawValue
     init() {
@@ -71,12 +16,12 @@ class TimeshtWorkingConProv : ConceptSpecProvider {
     }
 }
 
-class TimeshtWorkingConSpec : ConceptSpec {
+class TimeshtWorkingConSpec : ExampleConceptSpec {
     init(_code: ConceptCode) {
         super.init(concept: _code, path: Array<ArticleCode>(), result: TimeshtWorkingConSpec.conceptEval)
     }
-    static func conceptEval(target: ITermTarget, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList {
-        let resultsValues: ITermResult = TimeshtWorkingResult(target: target, value: 0, basis: 0, descr: ExampleResultConst.DESCRIPTION_EMPTY)
+    static func conceptEval(target: ITermTarget, spec: ArticleSpec?, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList {
+        let resultsValues: ITermResult = TimeshtWorkingResult(target: target, spec: spec)
 
         return Array<BuilderResult>(arrayLiteral: Result.success(resultsValues))
     }
@@ -93,14 +38,14 @@ class AmountBasisConProv : ConceptSpecProvider {
     }
 }
 
-class AmountBasisConSpec : ConceptSpec {
+class AmountBasisConSpec : ExampleConceptSpec {
     init(_code: ConceptCode) {
         super.init(concept: _code, path: AmountBasisConSpec.constToPathArray(path: [
             ExampleArticleConst.ARTICLE_TIMESHT_WORKING.rawValue,
         ]), result: AmountBasisConSpec.conceptEval)
     }
-    static func conceptEval(target: ITermTarget, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList {
-        let resultsValues: ITermResult = AmountBasisResult(target: target, value: 0, basis: 0, descr: ExampleResultConst.DESCRIPTION_EMPTY)
+    static func conceptEval(target: ITermTarget, spec: ArticleSpec?, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList {
+        let resultsValues: ITermResult = AmountBasisResult(target: target, spec: spec)
 
         return Array<BuilderResult>(arrayLiteral: Result.success(resultsValues))
     }
@@ -117,12 +62,12 @@ class AmountFixedConProv : ConceptSpecProvider {
     }
 }
 
-class AmountFixedConSpec : ConceptSpec {
+class AmountFixedConSpec : ExampleConceptSpec {
     init(_code: ConceptCode) {
         super.init(concept: _code, path: Array<ArticleCode>(), result: AmountFixedConSpec.conceptEval)
     }
-    static func conceptEval(target: ITermTarget, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList {
-        let resultsValues: ITermResult = AmountFixedResult(target: target, value: 0, basis: 0, descr: ExampleResultConst.DESCRIPTION_EMPTY)
+    static func conceptEval(target: ITermTarget, spec: ArticleSpec?, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList {
+        let resultsValues: ITermResult = AmountFixedResult(target: target, spec: spec)
 
         return Array<BuilderResult>(arrayLiteral: Result.success(resultsValues))
     }
@@ -139,12 +84,12 @@ class HealthInsbaseConProv : ConceptSpecProvider {
     }
 }
 
-class HealthInsbaseConSpec : ConceptSpec {
+class HealthInsbaseConSpec : ExampleConceptSpec {
     init(_code: ConceptCode) {
         super.init(concept: _code, path: Array<ArticleCode>(), result: HealthInsbaseConSpec.conceptEval)
     }
-    static func conceptEval(target: ITermTarget, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList {
-        let resultsValues: ITermResult = HealthInsbaseResult(target: target, value: 0, basis: 0, descr: ExampleResultConst.DESCRIPTION_EMPTY)
+    static func conceptEval(target: ITermTarget, spec: ArticleSpec?, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList {
+        let resultsValues: ITermResult = HealthInsbaseResult(target: target, spec: spec)
 
         return Array<BuilderResult>(arrayLiteral: Result.success(resultsValues))
     }
@@ -161,12 +106,12 @@ class SocialInsbaseConProv : ConceptSpecProvider {
     }
 }
 
-class SocialInsbaseConSpec : ConceptSpec {
+class SocialInsbaseConSpec : ExampleConceptSpec {
     init(_code: ConceptCode) {
         super.init(concept: _code, path: Array<ArticleCode>(), result: SocialInsbaseConSpec.conceptEval)
     }
-    static func conceptEval(target: ITermTarget, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList {
-        let resultsValues: ITermResult = SocialInsbaseResult(target: target, value: 0, basis: 0, descr: ExampleResultConst.DESCRIPTION_EMPTY)
+    static func conceptEval(target: ITermTarget, spec: ArticleSpec?, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList {
+        let resultsValues: ITermResult = SocialInsbaseResult(target: target, spec: spec)
 
         return Array<BuilderResult>(arrayLiteral: Result.success(resultsValues))
     }
@@ -183,14 +128,14 @@ class HealthInspaymConProv : ConceptSpecProvider {
     }
 }
 
-class HealthInspaymConSpec : ConceptSpec {
+class HealthInspaymConSpec : ExampleConceptSpec {
     init(_code: ConceptCode) {
         super.init(concept: _code, path: HealthInspaymConSpec.constToPathArray(path: [
             ExampleArticleConst.ARTICLE_HEALTH_INSBASE.rawValue,
         ]), result: HealthInspaymConSpec.conceptEval)
     }
-    static func conceptEval(target: ITermTarget, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList {
-        let resultsValues: ITermResult = HealthInspaymResult(target: target, value: 0, basis: 0, descr: ExampleResultConst.DESCRIPTION_EMPTY)
+    static func conceptEval(target: ITermTarget, spec: ArticleSpec?, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList {
+        let resultsValues: ITermResult = HealthInspaymResult(target: target, spec: spec)
 
         return Array<BuilderResult>(arrayLiteral: Result.success(resultsValues))
     }
@@ -207,14 +152,14 @@ class SocialInspaymConProv : ConceptSpecProvider {
     }
 }
 
-class SocialInspaymConSpec : ConceptSpec {
+class SocialInspaymConSpec : ExampleConceptSpec {
     init(_code: ConceptCode) {
         super.init(concept: _code, path: SocialInspaymConSpec.constToPathArray(path: [
             ExampleArticleConst.ARTICLE_SOCIAL_INSBASE.rawValue,
         ]), result: SocialInspaymConSpec.conceptEval)
     }
-    static func conceptEval(target: ITermTarget, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList {
-        let resultsValues: ITermResult = SocialInspaymResult(target: target, value: 0, basis: 0, descr: ExampleResultConst.DESCRIPTION_EMPTY)
+    static func conceptEval(target: ITermTarget, spec: ArticleSpec?, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList {
+        let resultsValues: ITermResult = SocialInspaymResult(target: target, spec: spec)
 
         return Array<BuilderResult>(arrayLiteral: Result.success(resultsValues))
     }
@@ -231,12 +176,12 @@ class TaxingAdvbaseConProv : ConceptSpecProvider {
     }
 }
 
-class TaxingAdvbaseConSpec : ConceptSpec {
+class TaxingAdvbaseConSpec : ExampleConceptSpec {
     init(_code: ConceptCode) {
         super.init(concept: _code, path: Array<ArticleCode>(), result: TaxingAdvbaseConSpec.conceptEval)
     }
-    static func conceptEval(target: ITermTarget, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList {
-        let resultsValues: ITermResult = TaxingAdvbaseResult(target: target, value: 0, basis: 0, descr: ExampleResultConst.DESCRIPTION_EMPTY)
+    static func conceptEval(target: ITermTarget, spec: ArticleSpec?, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList {
+        let resultsValues: ITermResult = TaxingAdvbaseResult(target: target, spec: spec)
 
         return Array<BuilderResult>(arrayLiteral: Result.success(resultsValues))
     }
@@ -253,14 +198,14 @@ class TaxingAdvpaymConProv : ConceptSpecProvider {
     }
 }
 
-class TaxingAdvpaymConSpec : ConceptSpec {
+class TaxingAdvpaymConSpec : ExampleConceptSpec {
     init(_code: ConceptCode) {
         super.init(concept: _code, path: TaxingAdvpaymConSpec.constToPathArray(path: [
             ExampleArticleConst.ARTICLE_TAXING_ADVBASE.rawValue,
         ]), result: TaxingAdvpaymConSpec.conceptEval)
     }
-    static func conceptEval(target: ITermTarget, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList {
-        let resultsValues: ITermResult = TaxingAdvpaymResult(target: target, value: 0, basis: 0, descr: ExampleResultConst.DESCRIPTION_EMPTY)
+    static func conceptEval(target: ITermTarget, spec: ArticleSpec?, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList {
+        let resultsValues: ITermResult = TaxingAdvpaymResult(target: target, spec: spec)
 
         return Array<BuilderResult>(arrayLiteral: Result.success(resultsValues))
     }
@@ -277,12 +222,12 @@ class IncomeGrossConProv : ConceptSpecProvider {
     }
 }
 
-class IncomeGrossConSpec : ConceptSpec {
+class IncomeGrossConSpec : ExampleConceptSpec {
     init(_code: ConceptCode) {
         super.init(concept: _code, path: Array<ArticleCode>(), result: IncomeGrossConSpec.conceptEval)
     }
-    static func conceptEval(target: ITermTarget, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList {
-        let resultsValues: ITermResult = IncomeGrossResult(target: target, value: 0, basis: 0, descr: ExampleResultConst.DESCRIPTION_EMPTY)
+    static func conceptEval(target: ITermTarget, spec: ArticleSpec?, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList {
+        let resultsValues: ITermResult = IncomeGrossResult(target: target, spec: spec)
 
         return Array<BuilderResult>(arrayLiteral: Result.success(resultsValues))
     }
@@ -299,7 +244,7 @@ class IncomeNettoConProv : ConceptSpecProvider {
     }
 }
 
-class IncomeNettoConSpec : ConceptSpec {
+class IncomeNettoConSpec : ExampleConceptSpec {
     init(_code: ConceptCode) {
         super.init(concept: _code, path: IncomeNettoConSpec.constToPathArray(path: [
             ExampleArticleConst.ARTICLE_INCOME_GROSS.rawValue,
@@ -308,8 +253,8 @@ class IncomeNettoConSpec : ConceptSpec {
             ExampleArticleConst.ARTICLE_TAXING_ADVPAYM.rawValue,
         ]), result: IncomeNettoConSpec.conceptEval)
     }
-    static func conceptEval(target: ITermTarget, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList {
-        let resultsValues: ITermResult = IncomeNettoResult(target: target, value: 0, basis: 0, descr: ExampleResultConst.DESCRIPTION_EMPTY)
+    static func conceptEval(target: ITermTarget, spec: ArticleSpec?, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList {
+        let resultsValues: ITermResult = IncomeNettoResult(target: target, spec: spec)
 
         return Array<BuilderResult>(arrayLiteral: Result.success(resultsValues))
     }

@@ -19,6 +19,9 @@ public class VariantCode : Comparable, ICodeValue {
         self.value = value
     }
 
+    static func zero() -> VariantCode {
+        return new()
+    }
     static func new() -> VariantCode {
         return VariantCode(0)
     }

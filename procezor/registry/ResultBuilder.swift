@@ -146,8 +146,9 @@ class ResultBuilder : IResultBuilder {
         return targetSort
     }
     private func addTargetToCalculs(targets: Array<ITermTarget>) -> Array<ITermCalcul> {
-        let targetsRets = targets.map { it in
-            return TermCalcul(target: it, resultDelegate: getCalculFunc(conceptsModel: conceptModel, concept: it.concept)) }
+        let targetsRets = targets.map { it -> ITermCalcul in
+            let articleSpec = articleModel.first {a in (a.code == it.article)}
+            return TermCalcul(target: it, spec: articleSpec, resultDelegate: getCalculFunc(conceptsModel: conceptModel, concept: it.concept)) }
         return targetsRets.map { $0 }
     }
     private func mergePendings(period: IPeriod, initRes: Array<ITermTarget>, target: ITermTarget) -> Array<ITermTarget> {
@@ -188,8 +189,7 @@ class ResultBuilder : IResultBuilder {
 
         return conceptSpec?.resultDelegate ?? notFoundCalculFunc
     }
-    private func notFoundCalculFunc(target: ITermTarget, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList
-    {
+    private func notFoundCalculFunc(target: ITermTarget, spec: ArticleSpec?, period: IPeriod, ruleset: IBundleProps, results: BuilderResultList) -> BuilderResultList {
         let resultError = TermResultError.CreateNoResultFuncError(period: period, target: target)
         return [.failure(resultError)]
     }

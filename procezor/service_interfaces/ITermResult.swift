@@ -6,9 +6,7 @@ import Foundation
 
 public protocol ITermResult : ITermSymbol {
     var concept : ConceptCode { get }
-    var resultDescr : String { get }
-    var resultBasis : Int32 { get }
-    var resultValue : Int32 { get }
+    var spec : ArticleSpec? { get }
     func articleDescr() -> String
     func conceptDescr() -> String
 }

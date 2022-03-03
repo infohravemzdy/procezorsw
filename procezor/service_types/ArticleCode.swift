@@ -23,6 +23,9 @@ public class ArticleCode : Comparable, Hashable, ISpecCode {
         self.value = value
     }
 
+    static func zero() -> ArticleCode {
+        return new()
+    }
     static func new() -> ArticleCode {
         return ArticleCode(0)
     }

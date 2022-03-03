@@ -23,6 +23,9 @@ public class ConceptCode : Comparable, ISpecCode {
         self.value = value
     }
 
+    static func zero() -> ConceptCode {
+        return new()
+    }
     static func new() -> ConceptCode {
         return ConceptCode(0)
     }
