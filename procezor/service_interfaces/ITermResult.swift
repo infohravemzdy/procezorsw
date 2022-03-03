@@ -10,3 +10,5 @@ public protocol ITermResult : ITermSymbol {
     func articleDescr() -> String
     func conceptDescr() -> String
 }
+
+public typealias ITermResultList = Array<ITermResult>

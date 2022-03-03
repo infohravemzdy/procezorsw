@@ -20,32 +20,13 @@ class ExampleTermTarget : TermTarget {
                    _position: PositionCode,
                    _variant: VariantCode,
                    _article: ArticleCode,
-                   _concept: ConceptCode,
-                   _basis: Int32,
-                   _descr: String) {
+                   _concept: ConceptCode) {
         super.init(_month: _month,
                 _contract: _contract,
                 _position: _position,
                 _variant: _variant,
                 _article: _article,
-                _concept: _concept,
-                _basis: _basis,
-                _descr: _descr)
-    }
-    convenience init (_month: MonthCode,
-                      _contract: ContractCode,
-                      _position: PositionCode,
-                      _variant: VariantCode,
-                      _article: ArticleCode,
-                      _concept: ConceptCode) {
-        self.init(_month: _month,
-                _contract: _contract,
-                _position: _position,
-                _variant: _variant,
-                _article: _article,
-                _concept: _concept,
-                _basis: 0,
-                _descr: "")
+                _concept: _concept)
     }
     public override func articleDescr() -> String {
         getArticleSymbol(item: article.value)

@@ -2,32 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67a64416-0c64-4534-afcd-9a50168fc11f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/procezor/service_interfaces/IContractTerm.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/procezor/service_interfaces/IPositionTerm.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/procezor/service_interfaces/ISpecSeqs.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/procezor/service_types/ArticleSeqs.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/procezor/service_types/ArticleTerm.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/procezor/service_types/ContractTerm.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/procezor/service_types/PositionTerm.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/procezorTests/example/ExampleConcepts.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/procezor.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/registry.providers/ArticleSpec.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/registry.providers/ArticleSpec.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/registry/ITermCalcul.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/registry/ITermCalcul.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/registry/ResultBuilder.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/registry/ResultBuilder.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/registry/TermCalcul.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/registry/TermCalcul.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/service_interfaces/IConceptSpec.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/service_interfaces/IConceptSpec.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/procezor/service_interfaces/ITermResult.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/service_interfaces/ITermResult.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/service_types/ArticleCode.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/service_types/ArticleCode.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/service_types/ConceptCode.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/service_types/ConceptCode.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/service_types/ContractCode.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/service_types/ContractCode.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/service_types/MonthCode.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/service_types/MonthCode.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/service_types/PositionCode.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/service_types/PositionCode.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/service_types/TermResult.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/service_types/TermResult.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/service_types/VariantCode.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/service_types/VariantCode.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/service_types/VersionCode.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/service_types/VersionCode.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezorTests/example/ExampleProviders.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezorTests/example/ExampleProviders.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezorTests/example/ExampleResults.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezorTests/example/ExampleResults.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezor/service_interfaces/ITermTarget.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/service_interfaces/ITermTarget.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezor/service_types/TermTarget.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/service_types/TermTarget.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezorTests/example/ExampleConcepts.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezorTests/example/ExampleConcepts.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +89,7 @@
       <workItem from="1636193892816" duration="326000" />
       <workItem from="1636281038321" duration="9109000" />
       <workItem from="1636389093463" duration="2031000" />
-      <workItem from="1646303833899" duration="5525000" />
+      <workItem from="1646303833899" duration="5960000" />
     </task>
     <servers />
   </component>
