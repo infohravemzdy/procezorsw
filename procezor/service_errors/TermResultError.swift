@@ -35,6 +35,11 @@ public enum TermResultError : ITermResultError {
         case .extractResultError(_, let target, _): return target
         case .noResultFuncError(_, let target, _): return target
         case .noImplementationError(_, let target, _): return target
+        case .invalidResultError(_, let target, _): return target
+        case .invalidRulesetError(_, let target, _): return target
+        case .invalidTargetError(_, let target, _): return target
+        case .noResultFoundError(_, let target, _): return target
+        case .nullResultFoundError(_, let target, _): return target
         }
     }
 
@@ -44,6 +49,11 @@ public enum TermResultError : ITermResultError {
             case .extractResultError(_, let target, _): return target?.article
             case .noResultFuncError(_, let target, _): return target?.article
             case .noImplementationError(_, let target, _): return target?.article
+            case .invalidResultError(_, let target, _): return target?.article
+            case .invalidRulesetError(_, let target, _): return target?.article
+            case .invalidTargetError(_, let target, _): return target?.article
+            case .noResultFoundError(_, let target, _): return target?.article
+            case .nullResultFoundError(_, let target, _): return target?.article
         }
     }
 
@@ -53,6 +63,11 @@ public enum TermResultError : ITermResultError {
             case .extractResultError(_, let target, _): return target?.concept
             case .noResultFuncError(_, let target, _): return target?.concept
             case .noImplementationError(_, let target, _): return target?.concept
+            case .invalidResultError(_, let target, _): return target?.concept
+            case .invalidRulesetError(_, let target, _): return target?.concept
+            case .invalidTargetError(_, let target, _): return target?.concept
+            case .noResultFoundError(_, let target, _): return target?.concept
+            case .nullResultFoundError(_, let target, _): return target?.concept
         }
     }
 
@@ -62,6 +77,11 @@ public enum TermResultError : ITermResultError {
             case .extractResultError(_, _, let description): return description
             case .noResultFuncError(_, _, let description): return description
             case .noImplementationError(_, _, let description): return description
+            case .invalidResultError(_, _, let description): return description
+            case .invalidRulesetError(_, _, let description): return description
+            case .invalidTargetError(_, _, let description): return description
+            case .noResultFoundError(_, _, let description): return description
+            case .nullResultFoundError(_, _, let description): return description
         }
     }
 
@@ -69,6 +89,12 @@ public enum TermResultError : ITermResultError {
     case extractResultError(period: IPeriod, target: ITermTarget?, _ message: String)
     case noImplementationError(period: IPeriod, target: ITermTarget?, _ message: String)
     case noResultFuncError(period: IPeriod, target: ITermTarget?, _ message: String)
+    case invalidResultError(period: IPeriod, target: ITermTarget?, _ message: String)
+    case invalidRulesetError(period: IPeriod, target: ITermTarget?, _ message: String)
+    case invalidTargetError(period: IPeriod, target: ITermTarget?, _ message: String)
+    case noResultFoundError(period: IPeriod, target: ITermTarget?, _ message: String)
+    case nullResultFoundError(period: IPeriod, target: ITermTarget?, _ message: String)
+
 }
 
 extension TermResultError {
@@ -83,6 +109,33 @@ extension TermResultError {
     }
     public static func CreateNoResultFuncError(period: IPeriod, target: ITermTarget) -> TermResultError {
         return .noResultFuncError(period: period, target: target, "failed with no-result function")
+    }
+    public static func CreateInvalidResultError(period: IPeriod, target: ITermTarget, _ typeDesr: String) -> TermResultError {
+        return .invalidResultError(period: period, target: target, "invalid result type \(typeDesr) error!")
+    }
+    public static func CreateInvalidRulesetError(period: IPeriod, target: ITermTarget, _ typeDesr: String) -> TermResultError {
+        return .invalidRulesetError(period: period, target: target, "Invalid \(typeDesr) Ruleset error!")
+    }
+    public static func CreateInvalidTargetError(period: IPeriod, target: ITermTarget, _ typeDesr: String) -> TermResultError {
+        return .invalidTargetError(period: period, target: target, "Invalid target type \(typeDesr) error!")
+    }
+    public static func CreateNoResultFoundError(period: IPeriod, target: ITermTarget, _ article: String) -> TermResultError {
+        return .noResultFoundError(period: period, target: target, "Result for \(article) Not Found")
+    }
+    public static func CreateNoResultFoundError(period: IPeriod, target: ITermTarget, _ article: String, _ contract: ContractCode) -> TermResultError {
+        return .noResultFoundError(period: period, target: target, "Result for \(article), contract=\(contract.value) Not Found")
+    }
+    public static func CreateNoResultFoundError(period: IPeriod, target: ITermTarget, _ article: String, _ contract: ContractCode, _ position: PositionCode) -> TermResultError {
+        return .noResultFoundError(period: period, target: target, "Result for \(article), contract=\(contract.value), position=\(position.value) Not Found")
+    }
+    public static func CreateNullResultFoundError(period: IPeriod, target: ITermTarget, _ article: String) -> TermResultError {
+        return .nullResultFoundError(period: period, target: target, "Result found for \(article) but Instance is Null!")
+    }
+    public static func CreateNullResultFoundError(period: IPeriod, target: ITermTarget, _ article: String, _ contract: ContractCode) -> TermResultError {
+        return .nullResultFoundError(period: period, target: target, "Result found for \(article), contract=\(contract.value) but Instance is Null!")
+    }
+    public static func CreateNullResultFoundError(period: IPeriod, target: ITermTarget, _ article: String, _ contract: ContractCode, _ position: PositionCode) -> TermResultError {
+        return .nullResultFoundError(period: period, target: target, "Result found for \(article), contract=\(contract.value), position=\(position.value) but Instance is Null!")
     }
 }
 

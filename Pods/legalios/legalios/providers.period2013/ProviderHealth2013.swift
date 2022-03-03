@@ -10,7 +10,7 @@ class ProviderHealth2013 : ProviderHealth {
     }
 
     override func getProps<P>(_ period: IPeriod) -> P {
-        return PropsHealth(version: version,
+        return PropsHealth2012(version: version,
                 minMonthlyBasis: minMonthlyBasis(period),
                 maxAnnualsBasis: maxAnnualsBasis(period),
                 limMonthlyState: limMonthlyState(period),

@@ -5,7 +5,7 @@
 import Foundation
 
 class ProviderSocial: ProviderBase, IProviderSocial {
-    typealias P = PropsSocial
+    typealias P = PropsSocialBase
 
     init(versionId: Int16) {
         super.init(versionId: VersionId.get(value: versionId))

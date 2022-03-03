@@ -4,17 +4,8 @@
 
 import Foundation
 
-class PropsSocial : PropsBase, IPropsSocial {
-    let maxAnnualsBasis: Int32
-    let factorEmployer: Decimal
-    let factorEmployerHigher: Decimal
-    let factorEmployee: Decimal
-    let factorEmployeeGarant: Decimal
-    let factorEmployeeReduce: Decimal
-    let marginIncomeEmp: Int32
-    let marginIncomeAgr: Int32
-
-    init(version: VersionId,
+class PropsSocial : PropsSocialBase {
+    override init(version: VersionId,
          maxAnnualsBasis: Int32,
          factorEmployer: Decimal,
          factorEmployerHigher: Decimal,
@@ -23,15 +14,16 @@ class PropsSocial : PropsBase, IPropsSocial {
          factorEmployeeReduce: Decimal,
          marginIncomeEmp: Int32,
          marginIncomeAgr: Int32) {
-        self.maxAnnualsBasis = maxAnnualsBasis
-        self.factorEmployer = factorEmployer
-        self.factorEmployerHigher = factorEmployerHigher
-        self.factorEmployee = factorEmployee
-        self.factorEmployeeGarant = factorEmployeeGarant
-        self.factorEmployeeReduce = factorEmployeeReduce
-        self.marginIncomeEmp = marginIncomeEmp
-        self.marginIncomeAgr = marginIncomeAgr
-        super.init(version: version)
+
+        super.init(version: version,
+                maxAnnualsBasis: maxAnnualsBasis,
+                factorEmployer: factorEmployer,
+                factorEmployerHigher: factorEmployerHigher,
+                factorEmployee: factorEmployee,
+                factorEmployeeGarant: factorEmployeeGarant,
+                factorEmployeeReduce: factorEmployeeReduce,
+                marginIncomeEmp: marginIncomeEmp,
+                marginIncomeAgr: marginIncomeAgr)
     }
 
     convenience init(version: Int16) {
@@ -48,5 +40,33 @@ class PropsSocial : PropsBase, IPropsSocial {
 
     static func empty() -> PropsSocial {
         return PropsSocial(version: VERSION_ZERO)
+    }
+
+    override func hasTermExemptionParticy(term: WorkSocialTerms) -> Bool {
+        return false
+    }
+    override func hasIncomeBasedEmploymentParticy(term: WorkSocialTerms) -> Bool {
+        return (term == WorkSocialTerms.SocialTermSmallsEmpl)
+    }
+    override func hasIncomeBasedAgreementsParticy(term: WorkSocialTerms) -> Bool {
+        return (term == WorkSocialTerms.SocialTermAgreemTask)
+    }
+    override func hasIncomeCumulatedParticy(term: WorkSocialTerms) -> Bool {
+        var particy = false
+        switch (term) {
+        case WorkSocialTerms.SocialTermEmployments: particy = false
+            break
+        case WorkSocialTerms.SocialTermAgreemTask: particy = true
+            break
+        case WorkSocialTerms.SocialTermSmallsEmpl: particy = true
+            break
+        case WorkSocialTerms.SocialTermShortsMeet: particy = false
+            break
+        case WorkSocialTerms.SocialTermShortsDeny: particy = false
+            break
+        case WorkSocialTerms.SocialTermByContract: particy = false
+            break
+        }
+        return particy
     }
 }

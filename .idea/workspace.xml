@@ -2,10 +2,106 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67a64416-0c64-4534-afcd-9a50168fc11f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Pods/legalios/legalios/props/ParticyResults.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/legalios/legalios/props/PropsHealth2010.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/legalios/legalios/props/PropsHealth2012.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/legalios/legalios/props/PropsHealth2014.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/legalios/legalios/props/PropsHealthBase.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/legalios/legalios/props/PropsSocial2010.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/legalios/legalios/props/PropsSocial2012.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/legalios/legalios/props/PropsSocialBase.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/legalios/legalios/props/PropsTaxing2010.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/legalios/legalios/props/PropsTaxing2014.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/legalios/legalios/props/PropsTaxing2018.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/legalios/legalios/props/PropsTaxingBase.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2010/HistoryConstHealth2010.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2010/HistoryConstSalary2010.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2010/HistoryConstSocial2010.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2010/HistoryConstTaxing2010.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2010/ProviderHealth2010.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2010/ProviderSalary2010.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2010/ProviderSocial2010.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2010/ProviderTaxing2010.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/legalios/legalios/service_types/BundleProps.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/legalios/legalios/service_types/ContractTerms.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/legalios/legalios/service_types/OperationsDec.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/legalios/legalios/service_types/OperationsPeriod.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/legalios/legalios/service_types/OperationsRound.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pods/legalios/legalios/service_types/TaxingOptions.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/procezor/registry.constants/TermConstants.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezorTests/example/ExampleArticles.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezorTests/example/ExampleArticles.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezorTests/example/ExampleFactories.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezorTests/example/ExampleFactories.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezorTests/example/ExampleProviders.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezorTests/example/ExampleProviders.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Manifest.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Manifest.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/legalios/legalios-Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/legalios/legalios-Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/factories/BundleBuilder.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/factories/BundleBuilder.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/factories/BundleProps.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/factories/FactoryHealth.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/factories/FactoryHealth.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/factories/FactorySalary.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/factories/FactorySalary.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/factories/FactorySocial.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/factories/FactorySocial.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/factories/FactoryTaxing.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/factories/FactoryTaxing.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/props/PropsHealth.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/props/PropsHealth.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/props/PropsSalary.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/props/PropsSalary.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/props/PropsSocial.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/props/PropsSocial.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/props/PropsTaxing.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/props/PropsTaxing.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2011/HistoryConstHealth2011.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2011/HistoryConstHealth2011.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2011/HistoryConstSalary2011.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2011/HistoryConstSalary2011.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2011/HistoryConstSocial2011.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2011/HistoryConstSocial2011.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2011/HistoryConstTaxing2011.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2011/HistoryConstTaxing2011.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2011/ProviderHealth2011.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2011/ProviderHealth2011.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2011/ProviderSocial2011.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2011/ProviderSocial2011.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2011/ProviderTaxing2011.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2011/ProviderTaxing2011.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2012/HistoryConstHealth2012.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2012/HistoryConstHealth2012.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2012/HistoryConstTaxing2012.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2012/HistoryConstTaxing2012.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2012/ProviderHealth2012.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2012/ProviderHealth2012.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2012/ProviderSocial2012.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2012/ProviderSocial2012.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2012/ProviderTaxing2012.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2012/ProviderTaxing2012.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2013/HistoryConstHealth2013.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2013/HistoryConstHealth2013.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2013/HistoryConstTaxing2013.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2013/HistoryConstTaxing2013.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2013/ProviderHealth2013.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2013/ProviderHealth2013.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2013/ProviderSocial2013.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2013/ProviderSocial2013.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2013/ProviderTaxing2013.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2013/ProviderTaxing2013.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2014/HistoryConstHealth2014.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2014/HistoryConstHealth2014.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2014/HistoryConstTaxing2014.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2014/HistoryConstTaxing2014.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2014/ProviderHealth2014.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2014/ProviderHealth2014.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2014/ProviderTaxing2014.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2014/ProviderTaxing2014.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2015/HistoryConstHealth2015.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2015/HistoryConstHealth2015.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2015/HistoryConstTaxing2015.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2015/HistoryConstTaxing2015.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2015/ProviderTaxing2015.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2015/ProviderTaxing2015.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2016/HistoryConstHealth2016.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2016/HistoryConstHealth2016.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2016/HistoryConstTaxing2016.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2016/HistoryConstTaxing2016.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2016/ProviderTaxing2016.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2016/ProviderTaxing2016.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2017/HistoryConstHealth2017.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2017/HistoryConstHealth2017.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2017/HistoryConstTaxing2017.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2017/HistoryConstTaxing2017.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2017/ProviderTaxing2017.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2017/ProviderTaxing2017.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2018/HistoryConstHealth2018.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2018/HistoryConstHealth2018.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2018/HistoryConstTaxing2018.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2018/HistoryConstTaxing2018.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2018/ProviderTaxing2018.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2018/ProviderTaxing2018.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2019/HistoryConstHealth2019.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2019/HistoryConstHealth2019.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2019/HistoryConstTaxing2019.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2019/HistoryConstTaxing2019.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2019/ProviderTaxing2019.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2019/ProviderTaxing2019.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2020/HistoryConstHealth2020.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2020/HistoryConstHealth2020.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2020/HistoryConstTaxing2020.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2020/HistoryConstTaxing2020.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2020/ProviderTaxing2020.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2020/ProviderTaxing2020.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2021/HistoryConstHealth2021.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2021/HistoryConstHealth2021.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2021/HistoryConstTaxing2021.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2021/HistoryConstTaxing2021.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2021/ProviderTaxing2021.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2021/ProviderTaxing2021.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2022/HistoryConstHealth2022.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2022/HistoryConstHealth2022.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2022/HistoryConstSalary2022.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2022/HistoryConstSalary2022.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2022/HistoryConstSocial2022.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2022/HistoryConstSocial2022.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2022/HistoryConstTaxing2022.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2022/HistoryConstTaxing2022.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2022/ProviderTaxing2022.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers.period2022/ProviderTaxing2022.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers/IProviderTaxing.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers/IProviderTaxing.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers/ProviderHealth.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers/ProviderHealth.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers/ProviderSocial.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers/ProviderSocial.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/providers/ProviderTaxing.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/providers/ProviderTaxing.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/service_interfaces/IPropsHealth.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/service_interfaces/IPropsHealth.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/service_interfaces/IPropsSalary.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/service_interfaces/IPropsSalary.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/service_interfaces/IPropsSocial.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/service_interfaces/IPropsSocial.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/legalios/legalios/service_interfaces/IPropsTaxing.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/legalios/legalios/service_interfaces/IPropsTaxing.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezor.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/procezor.podspec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezor.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/procezor.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezor/service_errors/TermResultError.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/service_errors/TermResultError.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +111,24 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="macos_macos_x86_64" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/procezor/registry/ResultBuilder.swift" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/procezor.podspec" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/procezor/service_interfaces/IArticleDefine.swift" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/procezor/service_interfaces/IArticleSpec.swift" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/procezor/service_types/ArticleDefine.swift" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/procezor/service/ServiceProcezor.swift" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/procezor/registry/DependencyGraph.swift" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/procezor/service_types/ArticleCode.swift" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/procezor/registry/IResultBuilder.swift" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/procezor/registry.providers/ArticleSpec.swift" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="20VRKDIjV5yMkG8ZoS9utNPtsr8" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -26,7 +140,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="OBJC.PRESERVED_TARGET_SELECTION" value="procezorTests" />
+    <property name="OBJC.PRESERVED_TARGET_SELECTION" value="procezor" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
@@ -70,6 +184,7 @@
       <workItem from="1636193892816" duration="326000" />
       <workItem from="1636281038321" duration="9109000" />
       <workItem from="1636389093463" duration="2031000" />
+      <workItem from="1646303833899" duration="1592000" />
     </task>
     <servers />
   </component>
@@ -86,7 +201,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

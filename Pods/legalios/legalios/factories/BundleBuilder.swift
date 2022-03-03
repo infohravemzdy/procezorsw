@@ -44,7 +44,7 @@ class BundleBuilder: IBundleBuilder {
         return taxingFactory.getProps(period)
     }
 
-    static let MIN_VERSION: Int16 = 2011
+    static let MIN_VERSION: Int16 = 2010
 
     private static func isNullOrEmpty(props : IProps?) -> Bool {
         return (props != nil && (props?.version.value ?? 0) < BundleBuilder.MIN_VERSION)

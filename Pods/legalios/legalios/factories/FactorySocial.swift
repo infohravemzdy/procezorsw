@@ -4,12 +4,13 @@
 
 import Foundation
 
-class FactorySocial : ProviderFactory<PropsSocial, ProviderSocial> {
+class FactorySocial : ProviderFactory<PropsSocialBase, ProviderSocial> {
     init() {
         super.init(
                 defaultProvider: ProviderSocial2022(),
                 emptyPeriodProps: PropsSocial.empty(),
                 versions: [
+                    HistoryConstSocial2010.VERSION_CODE:ProviderSocial2010(),
                     HistoryConstSocial2011.VERSION_CODE:ProviderSocial2011(),
                     HistoryConstSocial2012.VERSION_CODE:ProviderSocial2012(),
                     HistoryConstSocial2013.VERSION_CODE:ProviderSocial2013(),

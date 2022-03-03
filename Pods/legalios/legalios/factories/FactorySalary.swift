@@ -10,6 +10,7 @@ class FactorySalary : ProviderFactory<PropsSalary, ProviderSalary> {
                 defaultProvider: ProviderSalary2022(),
                 emptyPeriodProps: PropsSalary.empty(),
                 versions: [
+                    HistoryConstSalary2010.VERSION_CODE:ProviderSalary2010(),
                     HistoryConstSalary2011.VERSION_CODE:ProviderSalary2011(),
                     HistoryConstSalary2012.VERSION_CODE:ProviderSalary2012(),
                     HistoryConstSalary2013.VERSION_CODE:ProviderSalary2013(),

@@ -13,4 +13,11 @@ public protocol IPropsSocial : IProps {
     var factorEmployeeReduce: Decimal { get }
     var marginIncomeEmp: Int32 { get }
     var marginIncomeAgr: Int32 { get }
+
+    func valueEquals(other: IPropsSocial?) -> Bool
+    func hasParticy(term: WorkSocialTerms, incomeTerm: Int16, incomeSpec: Int16) -> Bool
+    func roundedEmployeePaym(basisResult: Int32) -> Int32
+    func roundedEmployerPaym(basisResult: Int32) -> Int32
+    func resultOvercaps(baseSuma: Int32, overCaps: Int32) -> (Int32, Int32)
+    func annualsBasisCut(incomeList: Array<ParticySocialTarget>, annuityBasis: Int32) -> (Int32, Int32, Array<ParticySocialResult>)
 }

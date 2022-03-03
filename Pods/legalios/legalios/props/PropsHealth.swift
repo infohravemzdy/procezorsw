@@ -4,34 +4,26 @@
 
 import Foundation
 
-class PropsHealth : PropsBase, IPropsHealth {
-    let minMonthlyBasis: Int32
-    let maxAnnualsBasis: Int32
-    let limMonthlyState: Int32
-    let limMonthlyDis50: Int32
-    let factorCompound: Decimal
-    let factorEmployee: Decimal
-    let marginIncomeEmp: Int32
-    let marginIncomeAgr: Int32
+class PropsHealth : PropsHealthBase {
+    override init(version: VersionId,
+                  minMonthlyBasis: Int32,
+                  maxAnnualsBasis: Int32,
+                  limMonthlyState: Int32,
+                  limMonthlyDis50: Int32,
+                  factorCompound: Decimal,
+                  factorEmployee: Decimal,
+                  marginIncomeEmp: Int32,
+                  marginIncomeAgr: Int32) {
 
-    init(version: VersionId,
-         minMonthlyBasis: Int32,
-         maxAnnualsBasis: Int32,
-         limMonthlyState: Int32,
-         limMonthlyDis50: Int32,
-         factorCompound: Decimal,
-         factorEmployee: Decimal,
-         marginIncomeEmp: Int32,
-         marginIncomeAgr: Int32) {
-        self.minMonthlyBasis = minMonthlyBasis
-        self.maxAnnualsBasis = maxAnnualsBasis
-        self.limMonthlyState = limMonthlyState
-        self.limMonthlyDis50 = limMonthlyDis50
-        self.factorCompound = factorCompound
-        self.factorEmployee = factorEmployee
-        self.marginIncomeEmp = marginIncomeEmp
-        self.marginIncomeAgr = marginIncomeAgr
-        super.init(version: version)
+        super.init(version: version,
+                minMonthlyBasis: minMonthlyBasis,
+                maxAnnualsBasis: maxAnnualsBasis,
+                limMonthlyState: limMonthlyState,
+                limMonthlyDis50: limMonthlyDis50,
+                factorCompound: factorCompound,
+                factorEmployee: factorEmployee,
+                marginIncomeEmp: marginIncomeEmp,
+                marginIncomeAgr: marginIncomeAgr)
     }
 
     convenience init(version: Int16) {
@@ -48,5 +40,29 @@ class PropsHealth : PropsBase, IPropsHealth {
 
     static func empty() -> PropsHealth {
         return PropsHealth(version: VERSION_ZERO)
+    }
+
+    override func hasTermExemptionParticy(term: WorkHealthTerms) -> Bool {
+        return false
+    }
+    override func hasIncomeBasedEmploymentParticy(term: WorkHealthTerms) -> Bool {
+        return (term == WorkHealthTerms.HealthTermAgreemWork)
+    }
+    override func hasIncomeBasedAgreementsParticy(term: WorkHealthTerms) -> Bool {
+        return (term == WorkHealthTerms.HealthTermAgreemTask)
+    }
+    override func hasIncomeCumulatedParticy(term: WorkHealthTerms) -> Bool {
+        var particy = false
+        switch (term) {
+        case WorkHealthTerms.HealthTermEmployments: particy = false
+            break
+        case WorkHealthTerms.HealthTermAgreemWork: particy = true
+            break
+        case WorkHealthTerms.HealthTermAgreemTask: particy = true
+            break
+        case WorkHealthTerms.HealthTermByContract: particy = false
+            break
+        }
+        return particy
     }
 }

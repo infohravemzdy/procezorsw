@@ -25,11 +25,11 @@ struct HistoryConstSocial2011
     static let VERSION_CODE: Int16 = 2011
 
     static let MAX_ANNUALS_BASIS: Int32 = 1781280
-    static let FACTOR_EMPLOYER: Decimal =  Decimal(string: "25.0")!
+    static let FACTOR_EMPLOYER: Decimal =  HistoryConstSocial2010.FACTOR_EMPLOYER
     static let FACTOR_EMPLOYER_HIGHER: Decimal =  Decimal(string: "26.0")!
-    static let FACTOR_EMPLOYEE: Decimal =  Decimal(string: "6.5")!
-    static let FACTOR_EMPLOYEE_REDUCE: Decimal =  Decimal(string: "0.0")!
-    static let FACTOR_EMPLOYEE_GARANT: Decimal =  Decimal(string: "0.0")!
-    static let MARGIN_INCOME_EMP: Int32 = 2000
-    static let MARGIN_INCOME_AGR: Int32 = MARGIN_INCOME_EMP
+    static let FACTOR_EMPLOYEE: Decimal =  HistoryConstSocial2010.FACTOR_EMPLOYEE
+    static let FACTOR_EMPLOYEE_REDUCE: Decimal =  HistoryConstSocial2010.FACTOR_EMPLOYEE_REDUCE
+    static let FACTOR_EMPLOYEE_GARANT: Decimal =  HistoryConstSocial2010.FACTOR_EMPLOYEE_GARANT
+    static let MARGIN_INCOME_EMP: Int32 = HistoryConstSocial2010.MARGIN_INCOME_EMP
+    static let MARGIN_INCOME_AGR: Int32 = HistoryConstSocial2010.MARGIN_INCOME_AGR
 }

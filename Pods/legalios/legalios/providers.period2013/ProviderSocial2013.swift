@@ -10,7 +10,7 @@ class ProviderSocial2013 : ProviderSocial {
     }
 
     override func getProps<P>(_ period: IPeriod) -> P {
-        return PropsSocial(version: version,
+        return PropsSocial2012(version: version,
                 maxAnnualsBasis: maxAnnualsBasis(period),
                 factorEmployer: factorEmployer(period),
                 factorEmployerHigher: factorEmployerHigher(period),

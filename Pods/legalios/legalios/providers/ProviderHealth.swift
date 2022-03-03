@@ -5,7 +5,7 @@
 import Foundation
 
 class ProviderHealth: ProviderBase, IProviderHealth {
-    typealias P = PropsHealth
+    typealias P = PropsHealthBase
 
     init(versionId: Int16) {
         super.init(versionId: VersionId.get(value: versionId))

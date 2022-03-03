@@ -5,7 +5,7 @@
 import Foundation
 
 class ProviderTaxing: ProviderBase, IProviderTaxing {
-    typealias P = PropsTaxing
+    typealias P = PropsTaxingBase
 
     init(versionId: Int16) {
         super.init(versionId: VersionId.get(value: versionId))
@@ -33,7 +33,9 @@ class ProviderTaxing: ProviderBase, IProviderTaxing {
 
     func factorWithhold(_ period: IPeriod) -> Decimal {return Decimal.zero}
 
-    func factorSolitary(_ period: IPeriod) -> Decimal {return Decimal.zero}
+    func factorSolidary(_ period: IPeriod) -> Decimal {return Decimal.zero}
+
+    func factorTaxRate2(_ period: IPeriod) -> Decimal {return Decimal.zero}
 
     func minAmountOfTaxBonus(_ period: IPeriod) -> Int32  {return 0}
 
@@ -45,7 +47,9 @@ class ProviderTaxing: ProviderBase, IProviderTaxing {
 
     func marginIncomeOfWithhold(_ period: IPeriod) -> Int32  {return 0}
 
-    func marginIncomeOfSolitary(_ period: IPeriod) -> Int32  {return 0}
+    func marginIncomeOfSolidary(_ period: IPeriod) -> Int32  {return 0}
+
+    func marginIncomeOfTaxRate2(_ period: IPeriod) -> Int32  {return 0}
 
     func marginIncomeOfWthEmp(_ period: IPeriod) -> Int32  {return 0}
 

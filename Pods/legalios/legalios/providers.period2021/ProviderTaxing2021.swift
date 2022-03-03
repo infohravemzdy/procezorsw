@@ -21,13 +21,15 @@ class ProviderTaxing2021: ProviderTaxing {
                 allowanceChild3rd: allowanceChild3rd(period),
                 factorAdvances: factorAdvances(period),
                 factorWithhold: factorWithhold(period),
-                factorSolitary: factorSolitary(period),
+                factorSolidary: factorSolidary(period),
+                factorTaxRate2: factorTaxRate2(period),
                 minAmountOfTaxBonus: minAmountOfTaxBonus(period),
                 maxAmountOfTaxBonus: maxAmountOfTaxBonus(period),
                 marginIncomeOfTaxBonus: marginIncomeOfTaxBonus(period),
                 marginIncomeOfRounding: marginIncomeOfRounding(period),
                 marginIncomeOfWithhold: marginIncomeOfWithhold(period),
-                marginIncomeOfSolitary: marginIncomeOfSolitary(period),
+                marginIncomeOfSolidary: marginIncomeOfSolidary(period),
+                marginIncomeOfTaxRate2: marginIncomeOfTaxRate2(period),
                 marginIncomeOfWthEmp: marginIncomeOfWthEmp(period),
                 marginIncomeOfWthAgr: marginIncomeOfWthAgr(period))  as! P
     }
@@ -72,8 +74,12 @@ class ProviderTaxing2021: ProviderTaxing {
         return HistoryConstTaxing2021.FACTOR_WITHHOLD
     }
 
-    override func factorSolitary(_ period: IPeriod) -> Decimal {
-        return HistoryConstTaxing2021.FACTOR_SOLITARY
+    override func factorSolidary(_ period: IPeriod) -> Decimal {
+        return HistoryConstTaxing2021.FACTOR_SOLIDARY
+    }
+
+    override func factorTaxRate2(_ period: IPeriod) -> Decimal {
+        return HistoryConstTaxing2021.FACTOR_TAXRATE2
     }
 
     override func minAmountOfTaxBonus(_ period: IPeriod) -> Int32 {
@@ -96,8 +102,12 @@ class ProviderTaxing2021: ProviderTaxing {
         return HistoryConstTaxing2021.MARGIN_INCOME_OF_WITHHOLD
     }
 
-    override func marginIncomeOfSolitary(_ period: IPeriod) -> Int32 {
-        return HistoryConstTaxing2021.MARGIN_INCOME_OF_SOLITARY
+    override func marginIncomeOfSolidary(_ period: IPeriod) -> Int32 {
+        return HistoryConstTaxing2021.MARGIN_INCOME_OF_SOLIDARY
+    }
+
+    override func marginIncomeOfTaxRate2(_ period: IPeriod) -> Int32 {
+        return HistoryConstTaxing2021.MARGIN_INCOME_OF_TAXRATE2
     }
 
     override func marginIncomeOfWthEmp(_ period: IPeriod) -> Int32 {

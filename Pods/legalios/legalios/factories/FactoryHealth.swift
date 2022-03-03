@@ -4,12 +4,13 @@
 
 import Foundation
 
-class FactoryHealth : ProviderFactory<PropsHealth, ProviderHealth> {
+class FactoryHealth : ProviderFactory<PropsHealthBase, ProviderHealth> {
     init() {
         super.init(
                 defaultProvider: ProviderHealth2022(),
                 emptyPeriodProps: PropsHealth.empty(),
                 versions: [
+                    HistoryConstHealth2010.VERSION_CODE:ProviderHealth2010(),
                     HistoryConstHealth2011.VERSION_CODE:ProviderHealth2011(),
                     HistoryConstHealth2012.VERSION_CODE:ProviderHealth2012(),
                     HistoryConstHealth2013.VERSION_CODE:ProviderHealth2013(),

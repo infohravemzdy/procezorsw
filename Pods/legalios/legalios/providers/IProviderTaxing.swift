@@ -15,13 +15,13 @@ protocol IProviderTaxing: IPropsProvider {
     func allowanceChild3rd(_ period: IPeriod) -> Int32
     func factorAdvances(_ period: IPeriod) -> Decimal
     func factorWithhold(_ period: IPeriod) -> Decimal
-    func factorSolitary(_ period: IPeriod) -> Decimal
+    func factorSolidary(_ period: IPeriod) -> Decimal
     func minAmountOfTaxBonus(_ period: IPeriod) -> Int32
     func maxAmountOfTaxBonus(_ period: IPeriod) -> Int32
     func marginIncomeOfTaxBonus(_ period: IPeriod) -> Int32
     func marginIncomeOfRounding(_ period: IPeriod) -> Int32
     func marginIncomeOfWithhold(_ period: IPeriod) -> Int32
-    func marginIncomeOfSolitary(_ period: IPeriod) -> Int32
+    func marginIncomeOfSolidary(_ period: IPeriod) -> Int32
     func marginIncomeOfWthEmp(_ period: IPeriod) -> Int32
     func marginIncomeOfWthAgr(_ period: IPeriod) -> Int32
 }

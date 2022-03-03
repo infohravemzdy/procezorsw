@@ -18,7 +18,7 @@ struct HistoryConstSalary2022
 
     static let WORKING_SHIFT_WEEK: Int32 = HistoryConstSalary2021.WORKING_SHIFT_WEEK
     static let WORKING_SHIFT_TIME: Int32 = HistoryConstSalary2021.WORKING_SHIFT_TIME
-    static let MIN_MONTHLY_WAGE: Int32   = HistoryConstSalary2021.MIN_MONTHLY_WAGE
-    static let MIN_HOURLY_WAGE: Int32    = HistoryConstSalary2021.MIN_HOURLY_WAGE
+    static let MIN_MONTHLY_WAGE: Int32   = 16200
+    static let MIN_HOURLY_WAGE: Int32    = 9640
 }
 

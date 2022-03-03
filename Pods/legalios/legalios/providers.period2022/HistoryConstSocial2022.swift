@@ -24,7 +24,7 @@ struct HistoryConstSocial2022
 {
     static let VERSION_CODE: Int16 = 2022
 
-    static let MAX_ANNUALS_BASIS: Int32 = HistoryConstSocial2021.MAX_ANNUALS_BASIS
+    static let MAX_ANNUALS_BASIS: Int32 = 1867728
     static let FACTOR_EMPLOYER: Decimal = HistoryConstSocial2021.FACTOR_EMPLOYER
     static let FACTOR_EMPLOYER_HIGHER: Decimal = HistoryConstSocial2021.FACTOR_EMPLOYER_HIGHER
     static let FACTOR_EMPLOYEE: Decimal = HistoryConstSocial2021.FACTOR_EMPLOYEE
