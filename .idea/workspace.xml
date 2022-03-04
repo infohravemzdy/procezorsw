@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="67a64416-0c64-4534-afcd-9a50168fc11f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/procezor.podspec" afterDir="false" />
-    </list>
+    <list default="true" id="67a64416-0c64-4534-afcd-9a50168fc11f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -91,7 +88,7 @@
       <workItem from="1646380884601" duration="660000" />
       <workItem from="1646384210565" duration="583000" />
       <workItem from="1646388724799" duration="5884000" />
-      <workItem from="1646397680784" duration="1465000" />
+      <workItem from="1646397680784" duration="1546000" />
     </task>
     <servers />
   </component>
