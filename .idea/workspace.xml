@@ -2,17 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67a64416-0c64-4534-afcd-9a50168fc11f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/procezor.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/procezor.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/procezor.xcodeproj/project.xcworkspace/xcuserdata/ladislavlisy.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/procezor.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/procezor.xcworkspace/xcuserdata/ladislavlisy.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/Podfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Manifest.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Manifest.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/Nimble.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/Nimble.xcscheme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/Pods-procezor.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/Pods-procezor.xcscheme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/Pods-procezorTests.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/Pods-procezorTests.xcscheme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/Quick.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/Quick.xcscheme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/legalios.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/legalios.xcscheme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-procezorTests/Pods-procezorTests-acknowledgements.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-procezorTests/Pods-procezorTests-acknowledgements.markdown" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-procezorTests/Pods-procezorTests-acknowledgements.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-procezorTests/Pods-procezorTests-acknowledgements.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-procezorTests/Pods-procezorTests-frameworks.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-procezorTests/Pods-procezorTests-frameworks.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezor.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/procezor.podspec" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/procezor.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/procezor.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezor.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/All in procezorTests.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/procezor.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/All in procezorTests.xcscheme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezor.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/procezor.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/procezor.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/procezor.xcscheme" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/procezor/service/ServiceProcezor.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/service/ServiceProcezor.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezorTests/example/ExampleArticles.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezorTests/example/ExampleConcepts.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezorTests/example/ExampleConcepts.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezorTests/example/ExampleFactories.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezorTests/example/ExampleFactories.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezorTests/example/ExampleProviders.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezorTests/example/ExampleProviders.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezorTests/example/ExampleResults.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezorTests/example/ExampleResults.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/procezorTests/example/ServiceExample.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezorTests/example/ServiceExample.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezorTests/service/ServiceProcezorExampleWithSalaryBonusBarterTest.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezorTests/service/ServiceProcezorExampleWithSalaryBonusBarterTest.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezorTests/service/ServiceProcezorExampleWithSalaryHomeOfficeTest.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezorTests/service/ServiceProcezorExampleWithSalaryHomeOfficeTest.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +42,6 @@
     <setting file="file://$PROJECT_DIR$/procezor/service_interfaces/IArticleDefine.swift" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/procezor/service_interfaces/IArticleSpec.swift" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/procezor/service_types/ArticleDefine.swift" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/procezor/service/ServiceProcezor.swift" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/procezor/registry/DependencyGraph.swift" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/procezor/service_types/ArticleCode.swift" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/procezor/registry/IResultBuilder.swift" root0="FORCE_HIGHLIGHTING" />
@@ -37,9 +49,6 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
-  </component>
-  <component name="OCResolveContextSettings">
-    <option name="configuration" value="Pods-899-46FFEAD189475DA7FE5ED1E7963A5E49-macosx12.1:macos:12.1-x86_64" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="ProjectErrors" />
@@ -101,7 +110,10 @@
       <workItem from="1636389093463" duration="2031000" />
       <workItem from="1646303833899" duration="18821000" />
       <workItem from="1646379515868" duration="1325000" />
-      <workItem from="1646380884601" duration="391000" />
+      <workItem from="1646380884601" duration="660000" />
+      <workItem from="1646384210565" duration="583000" />
+      <workItem from="1646388724799" duration="5884000" />
+      <workItem from="1646397680784" duration="394000" />
     </task>
     <servers />
   </component>

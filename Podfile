@@ -1,7 +1,7 @@
 project 'procezor.xcodeproj'
 
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :macos, '12.1'
 
 target 'procezor' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -14,7 +14,6 @@ target 'procezor' do
     inherit! :search_paths
     pod 'Quick'
     pod 'Nimble'
-    pod 'legalios'
   end
 
 end

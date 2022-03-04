@@ -1,5 +1,5 @@
 //
-// Created by Ladislav Lisy on 21.09.2021.
+// Created by Ladislav Lisy on 04.03.2022.
 //
 
 import Foundation
@@ -22,6 +22,7 @@ class ServiceProcezor : IServiceProcezor {
             print("Version: \(self.version), build factories failed".utf8)
         }
     }
+
     func builderOrder() -> Array<ArticleTerm> {
         return builder.articleOrder
     }
