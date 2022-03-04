@@ -4,15 +4,18 @@
 
 import Foundation
 
+@testable import legalios
+@testable import procezor
+
 class ServiceExample : ServiceProcezor {
     static private let TEST_VERSION: VersionCode = VersionCode.get(100)
     static private let TEST_FINAL_ARTICLE = ExampleArticleConst.ARTICLE_INCOME_NETTO.rawValue
     static private let TEST_FINAL_CONCEPT = ExampleConceptConst.CONCEPT_INCOME_NETTO.rawValue
 
-    static private let TEST_FINAL_DEFS: ArticleDefine = ArticleDefine(code: TEST_FINAL_ARTICLE, role: TEST_FINAL_CONCEPT)
+    static private let TEST_CALCS_ARTICLE: Array<ArticleCode> = [ArticleCode.get(TEST_FINAL_ARTICLE)]
 
     init () {
-        super.init(_version: ServiceExample.TEST_VERSION, _finDefs: ServiceExample.TEST_FINAL_DEFS)
+        super.init(_version: ServiceExample.TEST_VERSION, _calcArticles: ServiceExample.TEST_CALCS_ARTICLE)
     }
 
     override func buildArticleFactory() -> Bool {

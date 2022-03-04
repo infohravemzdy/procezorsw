@@ -4,6 +4,9 @@
 
 import Foundation
 
+@testable import legalios
+@testable import procezor
+
 class TimeshtWorkingResult : ExampleTermResult {
     init (target: ITermTarget, spec: ArticleSpec?) {
         super.init(_target: target, _spec: spec)

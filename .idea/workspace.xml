@@ -3,15 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="67a64416-0c64-4534-afcd-9a50168fc11f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/registry/DependencyGraph.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/registry/DependencyGraph.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/registry/IResultBuilder.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/registry/IResultBuilder.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/registry/ResultBuilder.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/registry/ResultBuilder.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/registry_providers/ConceptSpec.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/registry_providers/ConceptSpec.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/service/IServiceProcezor.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/service/IServiceProcezor.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezor.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/procezor.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/procezor/service/ServiceProcezor.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/service/ServiceProcezor.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/service_interfaces/IConceptSpec.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/service_interfaces/IConceptSpec.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/service_types/ContractTerm.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/service_types/ContractTerm.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/procezor/service_types/PositionTerm.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezor/service_types/PositionTerm.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezorTests/example/ExampleArticles.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezorTests/example/ExampleConcepts.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezorTests/example/ExampleConcepts.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezorTests/example/ExampleFactories.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezorTests/example/ExampleFactories.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezorTests/example/ExampleProviders.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezorTests/example/ExampleProviders.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezorTests/example/ExampleResults.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezorTests/example/ExampleResults.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezorTests/example/ServiceExample.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezorTests/example/ServiceExample.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezorTests/service/ServiceProcezorExampleWithSalaryBonusBarterTest.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezorTests/service/ServiceProcezorExampleWithSalaryBonusBarterTest.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezorTests/service/ServiceProcezorExampleWithSalaryHomeOfficeTest.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezorTests/service/ServiceProcezorExampleWithSalaryHomeOfficeTest.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +38,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="OCResolveContextSettings">
+    <option name="configuration" value="Pods-899-46FFEAD189475DA7FE5ED1E7963A5E49-macosx12.1:macos:12.1-x86_64" />
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="ProjectErrors" />
   </component>
@@ -58,6 +62,7 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager" selected="XCTest.All in procezorTests">
@@ -95,6 +100,8 @@
       <workItem from="1636281038321" duration="9109000" />
       <workItem from="1636389093463" duration="2031000" />
       <workItem from="1646303833899" duration="18821000" />
+      <workItem from="1646379515868" duration="1325000" />
+      <workItem from="1646380884601" duration="391000" />
     </task>
     <servers />
   </component>
@@ -117,16 +124,5 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/procezorTests/service/ServiceProcezorExampleWithSalaryBonusBarterTest.swift</url>
-          <line>4</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

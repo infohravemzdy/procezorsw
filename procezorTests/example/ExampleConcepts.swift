@@ -3,7 +3,9 @@
 //
 
 import Foundation
-import  legalios
+
+@testable import legalios
+@testable import procezor
 
 public class ExampleConceptSpec : ConceptSpec {
     override init(concept: ConceptCode, path: Array<ArticleCode>, result: ResultFunc?) {

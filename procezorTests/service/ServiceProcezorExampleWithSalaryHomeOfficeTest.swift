@@ -7,6 +7,7 @@ import Quick
 import Nimble
 
 @testable import legalios
+@testable import procezor
 
 class ServiceProcezorExampleWithSalaryHomeOfficeTest: QuickSpec {
     static func getTargetsFromDb(period: IPeriod) -> Array<ITermTarget> {
@@ -78,13 +79,11 @@ class ServiceProcezorExampleWithSalaryHomeOfficeTest: QuickSpec {
                     let articleSymbol: String = resultValue.articleDescr()
                     let conceptSymbol: String = resultValue.conceptDescr()
                     print("Index: \(index), ART: \(articleSymbol), CON: \(conceptSymbol)".utf8)
-                case .failure(let errorValue) where (errorValue is TermResultError):
+                case .failure(let errorValue):
                     let resultError = errorValue as TermResultError
                     let articleSymbol: String = resultError.articleDescr()
                     let conceptSymbol: String = resultError.conceptDescr()
                     print("Index: \(index), ART: \(articleSymbol), CON: \(conceptSymbol), Error: \(resultError.description)".utf8)
-                case .failure(let errorValue):
-                    print("Index: \(index), Error: \(errorValue)".utf8)
                 }
             })
 

@@ -3,7 +3,9 @@
 //
 
 import Foundation
-import  legalios
+
+@testable import legalios
+@testable import procezor
 
 class TimeshtWorkingConProv : ConceptSpecProvider {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_TIMESHT_WORKING.rawValue

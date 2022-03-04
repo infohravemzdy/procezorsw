@@ -19,7 +19,7 @@ class ServiceProcezor : IServiceProcezor {
         self.calcArticles = _calcArticles
         let buildSuccess = self.buildFactories()
         if buildSuccess == false {
-            // log error
+            print("Version: \(self.version), build factories failed".utf8)
         }
     }
     func builderOrder() -> Array<ArticleTerm> {

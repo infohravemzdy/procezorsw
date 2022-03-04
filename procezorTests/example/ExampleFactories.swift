@@ -4,6 +4,9 @@
 
 import Foundation
 
+@testable import legalios
+@testable import procezor
+
 class ExampleArticleFactory : ArticleSpecFactory {
     private static let ARTICLE_DEFAULT_SEQUENS: Int16 = 0
     private let providersConfig = Array<ProviderRecord>(arrayLiteral:
