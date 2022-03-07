@@ -13,5 +13,5 @@ public protocol IConceptSpec : ISpecDefine {
     var resultDelegate : ResultFunc? { get }
     func defaultTargetList(article: ArticleCode, period: IPeriod, ruleset: IBundleProps, month: MonthCode,
                            contractTerms: Array<ContractTerm>, positionTerms: Array<PositionTerm>,
-                           targets: Array<ITermTarget>, vars: VariantCode) -> Array<ITermTarget>
+                           targets: ITermTargetList, vars: VariantCode) -> Array<ITermTarget>
 }

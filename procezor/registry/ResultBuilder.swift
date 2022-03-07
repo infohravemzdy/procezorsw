@@ -59,7 +59,7 @@ class ResultBuilder : IResultBuilder {
 
     func getResults(ruleset: IBundleProps,
                     contractTerms: Array<ContractTerm>, positionTerms: Array<PositionTerm>,
-                    targets: Array<ITermTarget>, calcArticles: Array<ArticleCode>) -> BuilderResultList {
+                    targets: ITermTargetList, calcArticles: Array<ArticleCode>) -> BuilderResultList {
         let calculTargets = buildCalculsList(period: periodInit, ruleset: ruleset,
                 contractTerms: contractTerms, positionTerms: positionTerms,
                 targets: targets, calcArticles: calcArticles)
@@ -71,18 +71,18 @@ class ResultBuilder : IResultBuilder {
     private func buildCalculsList(
         period: IPeriod, ruleset: IBundleProps,
         contractTerms: Array<ContractTerm>, positionTerms: Array<PositionTerm>,
-        targets: Array<ITermTarget>,
+        targets: ITermTargetList,
         calcArticles: Array<ArticleCode>) -> Array<ITermCalcul> {
         let specDefines: Array<ArticleSpec?> = calcArticles.map { a in articleModel.first { m in m.code == a } ?? nil }
 
         let calcDefines = specDefines.filter { s in (s != nil) }.map { t in t! }
                 .map { x in ArticleDefine(code: x.code.value, seqs: x.seqs.value, role: x.role.value) }
 
-        let targetsSpec: Array<ITermTarget> = addFinDefToTargets(period: period, ruleset: ruleset,
+        let targetsSpec: ITermTargetList = addFinDefToTargets(period: period, ruleset: ruleset,
                 contractTerms: contractTerms, positionTerms: positionTerms,
                 targets: targets.map { $0 }, calcDefines: calcDefines)
 
-        let targetsStep: Array<ITermTarget> = addExternToTargets(period: period, ruleset: ruleset,
+        let targetsStep: ITermTargetList = addExternToTargets(period: period, ruleset: ruleset,
                 contractTerms: contractTerms, positionTerms: positionTerms,
                 targets: targetsSpec)
 
@@ -105,15 +105,15 @@ class ResultBuilder : IResultBuilder {
     }
     private func addFinDefToTargets(period: IPeriod, ruleset: IBundleProps,
                                     contractTerms: Array<ContractTerm>, positionTerms: Array<PositionTerm>,
-                                    targets: Array<ITermTarget>, calcDefines: Array<ArticleDefine>) -> Array<ITermTarget> {
+                                    targets: ITermTargetList, calcDefines: Array<ArticleDefine>) -> Array<ITermTarget> {
         return mergeListPendings(period: period, ruleset: ruleset,
                 contractTerms: contractTerms, positionTerms: positionTerms,
                 initRes: targets, calcDefines: calcDefines)
     }
     private func addExternToTargets(period: IPeriod, ruleset: IBundleProps,
                                     contractTerms: Array<ContractTerm>, positionTerms: Array<PositionTerm>,
-                                    targets: Array<ITermTarget>) -> Array<ITermTarget> {
-        let targetsInit: Array<ITermTarget> = targets.map { $0 }
+                                    targets: ITermTargetList) -> Array<ITermTarget> {
+        let targetsInit: ITermTargetList = targets.map { $0 }
 
         let targetList = targets.reduce(targetsInit) {agr, item in
             return  mergePendings(period: period, ruleset: ruleset,
@@ -126,7 +126,7 @@ class ResultBuilder : IResultBuilder {
     }
     private func addDefinesToTargets(period: IPeriod, ruleset: IBundleProps,
                                      contractTerms: Array<ContractTerm>, positionTerms: Array<PositionTerm>,
-                                     targets: Array<ITermTarget>, defines: Array<ArticleDefine>) -> Array<ITermTarget>
+                                     targets: ITermTargetList, defines: Array<ArticleDefine>) -> Array<ITermTarget>
     {
         return defines.flatMap { x in
             getTargetList(period: period, ruleset: ruleset, conceptsModel: conceptModel,
@@ -134,7 +134,7 @@ class ResultBuilder : IResultBuilder {
                     targets: targets.filter {t in t.article == x.code}, article: x.code, concept: x.role).map { $0 }
         }
     }
-    private func addTargetToCalculs(targets: Array<ITermTarget>) -> Array<ITermCalcul> {
+    private func addTargetToCalculs(targets: ITermTargetList) -> Array<ITermCalcul> {
         let targetsRets = targets.map { it -> ITermCalcul in
             let articleSpec = articleModel.first {a in (a.code == it.article)}
             return TermCalcul(target: it, spec: articleSpec, resultDelegate: getCalculFunc(conceptsModel: conceptModel, concept: it.concept)) }
@@ -142,8 +142,8 @@ class ResultBuilder : IResultBuilder {
     }
     private func mergePendings(period: IPeriod, ruleset: IBundleProps,
                                contractTerms: Array<ContractTerm>, positionTerms: Array<PositionTerm>,
-                               initRes: Array<ITermTarget>, target: ITermTarget) -> Array<ITermTarget> {
-        var resultList: Array<ITermTarget> = initRes.map { $0 }
+                               initRes: ITermTargetList, target: ITermTarget) -> Array<ITermTarget> {
+        var resultList: ITermTargetList = initRes.map { $0 }
 
         let pendingsSpec = articlePaths.first { k, v in return k.code == target.article }
         let pendingsPath = pendingsSpec?.value ?? nil
@@ -158,8 +158,8 @@ class ResultBuilder : IResultBuilder {
     }
     private func mergeItemPendings(period: IPeriod, ruleset: IBundleProps,
                                    contractTerms: Array<ContractTerm>, positionTerms: Array<PositionTerm>,
-                                   initRes: Array<ITermTarget>, articleDefs: ArticleDefine) -> Array<ITermTarget> {
-        var resultList: Array<ITermTarget> = initRes.map { $0 }
+                                   initRes: ITermTargetList, articleDefs: ArticleDefine) -> Array<ITermTarget> {
+        var resultList: ITermTargetList = initRes.map { $0 }
 
         let initTargets = initRes.filter { x in return x.article == articleDefs.code }
 
@@ -173,8 +173,8 @@ class ResultBuilder : IResultBuilder {
     }
     private func mergeListPendings(period: IPeriod, ruleset: IBundleProps,
                                    contractTerms: Array<ContractTerm>, positionTerms: Array<PositionTerm>,
-                                   initRes: Array<ITermTarget>, calcDefines: Array<ArticleDefine>) -> Array<ITermTarget> {
-        var resultList: Array<ITermTarget> = initRes.map { $0 }
+                                   initRes: ITermTargetList, calcDefines: Array<ArticleDefine>) -> Array<ITermTarget> {
+        var resultList: ITermTargetList = initRes.map { $0 }
 
         let defineList = calcDefines.filter {x in initRes.first {t in t.article == x.code}==nil}
 
@@ -193,7 +193,7 @@ class ResultBuilder : IResultBuilder {
     }
     private func getTargetList(period: IPeriod, ruleset: IBundleProps, conceptsModel: Array<ConceptSpec>,
                                contractTerms: Array<ContractTerm>, positionTerms: Array<PositionTerm>,
-                               targets: Array<ITermTarget>, article: ArticleCode, concept:ConceptCode) -> Array<ITermTarget> {
+                               targets: ITermTargetList, article: ArticleCode, concept:ConceptCode) -> Array<ITermTarget> {
         let monthCode = MonthCode.get(period.code)
         let variant = VariantCode.get(1)
 

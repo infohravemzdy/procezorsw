@@ -13,5 +13,5 @@ protocol IResultBuilder {
 
     func initWithPeriod(version: VersionCode, period: IPeriod, articleFactory: ArticleSpecFactory, conceptFactory: ConceptSpecFactory) -> Bool
     func getResults(ruleset: IBundleProps, contractTerms: Array<ContractTerm>, positionTerms: Array<PositionTerm>,
-                    targets: Array<ITermTarget>, calcArticles: Array<ArticleCode>) -> BuilderResultList
+                    targets: ITermTargetList, calcArticles: Array<ArticleCode>) -> BuilderResultList
 }
