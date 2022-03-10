@@ -17,10 +17,6 @@ class ServiceProcezor : IServiceProcezor {
     init (_version: VersionCode, _calcArticles: Array<ArticleCode>) {
         self.version = _version
         self.calcArticles = _calcArticles
-        let buildSuccess = self.buildFactories()
-        if buildSuccess == false {
-            print("Version: \(self.version), build factories failed".utf8)
-        }
     }
 
     func builderOrder() -> Array<ArticleTerm> {
@@ -64,6 +60,9 @@ class ServiceProcezor : IServiceProcezor {
             initResult = builder.initWithPeriod(version: version, period: period,
                     articleFactory: articleFactory!, conceptFactory: conceptFactory!)
         }
+        if initResult == false {
+            print("Period: \(period.code), init with period failed".utf8)
+        }
         return initResult
     }
 
@@ -72,6 +71,9 @@ class ServiceProcezor : IServiceProcezor {
 
         let conceptFactorySuccess: Bool = buildConceptFactory()
 
+        if !(articleFactorySuccess && conceptFactorySuccess) {
+            print("ServiceProcezor::BuildFactories(): Version: \(self.version), build factories failed".utf8)
+        }
         return articleFactorySuccess && conceptFactorySuccess
     }
 

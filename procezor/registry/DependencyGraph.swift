@@ -207,8 +207,10 @@ class DependencyGraph {
                 }
             }
         }
-        if (index != vertModel.count)
+        let modelLength = vertModel.count
+        if (index != modelLength)
         {
+            print("CreateTopoModel, build graph failed: \(index)<>\(modelLength)".utf8)
             return [ArticleTerm]()
         }
         return articlesOrder

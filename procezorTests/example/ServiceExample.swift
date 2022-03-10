@@ -13,6 +13,10 @@ class ServiceExample : ServiceProcezor {
 
     init() {
         super.init(_version: ServiceExample.TEST_VERSION, _calcArticles: ServiceExample.TEST_CALCS_ARTICLE)
+        let buildSuccess = buildFactories()
+        if buildSuccess == false {
+            print("Version: \(self.version), build factories failed".utf8)
+        }
     }
 
     override func buildArticleFactory() -> Bool {
