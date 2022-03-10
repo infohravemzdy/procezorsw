@@ -7,6 +7,7 @@ import Foundation
 @testable import legalios
 @testable import procezor
 
+// TimeshtWorking		TIMESHT_WORKING
 class TimeshtWorkingConProv : ConceptSpecProvider {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_TIMESHT_WORKING.rawValue
     init() {
@@ -29,6 +30,7 @@ class TimeshtWorkingConSpec : ExampleConceptSpec {
     }
 }
 
+// AmountBasis		AMOUNT_BASIS
 class AmountBasisConProv : ConceptSpecProvider {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_AMOUNT_BASIS.rawValue
     init() {
@@ -53,6 +55,7 @@ class AmountBasisConSpec : ExampleConceptSpec {
     }
 }
 
+// AmountFixed		AMOUNT_FIXED
 class AmountFixedConProv : ConceptSpecProvider {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_AMOUNT_FIXED.rawValue
     init() {
@@ -75,6 +78,7 @@ class AmountFixedConSpec : ExampleConceptSpec {
     }
 }
 
+// HealthInsbase		HEALTH_INSBASE
 class HealthInsbaseConProv : ConceptSpecProvider {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_HEALTH_INSBASE.rawValue
     init() {
@@ -97,6 +101,7 @@ class HealthInsbaseConSpec : ExampleConceptSpec {
     }
 }
 
+// SocialInsbase		SOCIAL_INSBASE
 class SocialInsbaseConProv : ConceptSpecProvider {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_SOCIAL_INSBASE.rawValue
     init() {
@@ -119,6 +124,7 @@ class SocialInsbaseConSpec : ExampleConceptSpec {
     }
 }
 
+// HealthInspaym		HEALTH_INSPAYM
 class HealthInspaymConProv : ConceptSpecProvider {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_HEALTH_INSPAYM.rawValue
     init() {
@@ -143,6 +149,7 @@ class HealthInspaymConSpec : ExampleConceptSpec {
     }
 }
 
+// SocialInspaym		SOCIAL_INSPAYM
 class SocialInspaymConProv : ConceptSpecProvider {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_SOCIAL_INSPAYM.rawValue
     init() {
@@ -167,6 +174,7 @@ class SocialInspaymConSpec : ExampleConceptSpec {
     }
 }
 
+// TaxingAdvbase		TAXING_ADVBASE
 class TaxingAdvbaseConProv : ConceptSpecProvider {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_TAXING_ADVBASE.rawValue
     init() {
@@ -189,6 +197,7 @@ class TaxingAdvbaseConSpec : ExampleConceptSpec {
     }
 }
 
+// TaxingAdvpaym		TAXING_ADVPAYM
 class TaxingAdvpaymConProv : ConceptSpecProvider {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_TAXING_ADVPAYM.rawValue
     init() {
@@ -213,6 +222,7 @@ class TaxingAdvpaymConSpec : ExampleConceptSpec {
     }
 }
 
+// IncomeGross		INCOME_GROSS
 class IncomeGrossConProv : ConceptSpecProvider {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_INCOME_GROSS.rawValue
     init() {
@@ -235,6 +245,7 @@ class IncomeGrossConSpec : ExampleConceptSpec {
     }
 }
 
+// IncomeNetto		INCOME_NETTO
 class IncomeNettoConProv : ConceptSpecProvider {
     static let CONCEPT_CODE = ExampleConceptConst.CONCEPT_INCOME_NETTO.rawValue
     init() {
