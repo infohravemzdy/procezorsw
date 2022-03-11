@@ -1,5 +1,5 @@
 PODS:
-  - legalios (0.22.3)
+  - legalios (0.22.5)
   - Nimble (9.2.1)
   - Quick (4.0.0)
 
@@ -15,10 +15,10 @@ SPEC REPOS:
     - Quick
 
 SPEC CHECKSUMS:
-  legalios: 1d78e9308dbc89a606ba2ccff073985d3800cee6
+  legalios: 159d27548f7f31234e1c5c5f5ae6df3257749554
   Nimble: e7e615c0335ee4bf5b0d786685451e62746117d5
   Quick: 6473349e43b9271a8d43839d9ba1c442ed1b7ac4
 
-PODFILE CHECKSUM: 777e295752edf10ff9a02217615482fdfacfa8e2
+PODFILE CHECKSUM: 775e36aa993a1a42211e0b2c89af307ebdc00f0c
 
 COCOAPODS: 1.11.2

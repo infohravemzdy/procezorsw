@@ -3,8 +3,8 @@
 //
 
 import Foundation
+import legalios
 
-@testable import legalios
 @testable import procezor
 
 public class ExampleConceptSpec : ConceptSpec {

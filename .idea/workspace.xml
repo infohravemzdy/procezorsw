@@ -1,7 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="67a64416-0c64-4534-afcd-9a50168fc11f" name="Changes" comment="" />
+    <list default="true" id="67a64416-0c64-4534-afcd-9a50168fc11f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/procezor.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/ServiceProcezorExampleWithSalaryBonusBarterTest.xcscheme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/procezor.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/procezor.xcworkspace/xcuserdata/ladislavlisy.xcuserdatad/IDEFindNavigatorScopes.plist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/procezor.xcworkspace/xcuserdata/ladislavlisy.xcuserdatad/WorkspaceSettings.xcsettings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/Podfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Manifest.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Manifest.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/Nimble.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/Nimble.xcscheme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/Pods-procezor.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/Pods-procezor.xcscheme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/Pods-procezorTests.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/Pods-procezorTests.xcscheme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/Quick.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/Quick.xcscheme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/legalios.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/legalios.xcscheme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-procezorTests/Pods-procezorTests-acknowledgements.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-procezorTests/Pods-procezorTests-acknowledgements.markdown" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-procezorTests/Pods-procezorTests-acknowledgements.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-procezorTests/Pods-procezorTests-acknowledgements.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-procezorTests/Pods-procezorTests-frameworks.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-procezorTests/Pods-procezorTests-frameworks.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Target Support Files/legalios/legalios-Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Target Support Files/legalios/legalios-Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezor.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/procezor.podspec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezor.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/procezor.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezor.xcodeproj/project.xcworkspace/xcuserdata/ladislavlisy.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/procezor.xcodeproj/project.xcworkspace/xcuserdata/ladislavlisy.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezor.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/All in procezorTests.xcscheme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezor.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/procezor.xcodeproj/xcuserdata/ladislavlisy.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezor.xcworkspace/xcuserdata/ladislavlisy.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/procezor.xcworkspace/xcuserdata/ladislavlisy.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezorTests/example/ExampleConcepts.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezorTests/example/ExampleConcepts.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezorTests/example/ExampleFactories.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezorTests/example/ExampleFactories.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezorTests/example/ExampleProviders.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezorTests/example/ExampleProviders.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezorTests/example/ExampleResults.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezorTests/example/ExampleResults.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezorTests/service/ServiceProcezorExampleWithSalaryBonusBarterTest.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezorTests/service/ServiceProcezorExampleWithSalaryBonusBarterTest.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/procezorTests/service/ServiceProcezorExampleWithSalaryHomeOfficeTest.swift" beforeDir="false" afterPath="$PROJECT_DIR$/procezorTests/service/ServiceProcezorExampleWithSalaryHomeOfficeTest.swift" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,7 +58,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="20VRKDIjV5yMkG8ZoS9utNPtsr8" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -49,7 +81,7 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
-  <component name="RunManager" selected="XCTest.All in procezorTests">
+  <component name="RunManager" selected="XCTest.ServiceProcezorExampleWithSalaryBonusBarterTest">
     <configuration name="procezor" type="AppleRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="procezor" TARGET_NAME="procezor" CONFIG_NAME="Debug" SCHEME_NAME="procezor" IS_LOCATION_SIMULATION_ALLOWED="true" LOCATION_SCENARIO_ID="com.apple.dt.IDEFoundation.CurrentLocationScenarioIdentifier" LOCATION_SCENARIO_TYPE="1" APPLICATION_LANGUAGE="IDELaunchSchemeLanguageUseSystemLanguage" APPLICATION_REGION="" MAKE_ACTIVE="TRUE" SHOULD_DEBUG_EXTENSIONS="false">
       <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
         <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
@@ -59,15 +91,20 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in procezorTests" type="OCUnitRunConfiguration" factoryName="XCTest/Kiwi" nameIsGenerated="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="procezor" TARGET_NAME="procezorTests" CONFIG_NAME="Debug" SCHEME_NAME="All in procezorTests" IS_LOCATION_SIMULATION_ALLOWED="true" LOCATION_SCENARIO_ID="com.apple.dt.IDEFoundation.CurrentLocationScenarioIdentifier" LOCATION_SCENARIO_TYPE="1" APPLICATION_LANGUAGE="IDELaunchSchemeLanguageUseSystemLanguage" APPLICATION_REGION="" TEST_MODE="SUITE_TEST">
+    <configuration name="ServiceProcezorExampleWithSalaryBonusBarterTest" type="OCUnitRunConfiguration" factoryName="XCTest/Kiwi" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="procezor" TARGET_NAME="procezorTests" CONFIG_NAME="Debug" SCHEME_NAME="ServiceProcezorExampleWithSalaryBonusBarterTest" IS_LOCATION_SIMULATION_ALLOWED="true" APPLICATION_LANGUAGE="IDELaunchSchemeLanguageUseSystemLanguage" APPLICATION_REGION="" TEST_CLASS="ServiceProcezorExampleWithSalaryBonusBarterTest" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="Application.procezor" />
-      <item itemvalue="XCTest.All in procezorTests" />
+      <item itemvalue="XCTest.ServiceProcezorExampleWithSalaryBonusBarterTest" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="XCTest.ServiceProcezorExampleWithSalaryBonusBarterTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -89,6 +126,10 @@
       <workItem from="1646384210565" duration="583000" />
       <workItem from="1646388724799" duration="5884000" />
       <workItem from="1646397680784" duration="1570000" />
+      <workItem from="1646929326147" duration="3105000" />
+      <workItem from="1646932892061" duration="503000" />
+      <workItem from="1646933562134" duration="127000" />
+      <workItem from="1647010473905" duration="4243000" />
     </task>
     <servers />
   </component>

@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "procezor"
-  spec.version      = "0.22.2"
+  spec.version      = "0.22.3"
   spec.summary      = "Salary, Health, Social, Taxing Properties for years 2011-2022"
 
   # This description is used to generate tags and improve search results.
@@ -77,7 +77,7 @@ Pod::Spec.new do |spec|
 
   #  When using multiple platforms
   # spec.ios.deployment_target = "5.0"
-  spec.osx.deployment_target = "12.1"
+  spec.osx.deployment_target = "11.3"
   # spec.watchos.deployment_target = "2.0"
   # spec.tvos.deployment_target = "9.0"
 
@@ -142,6 +142,5 @@ Pod::Spec.new do |spec|
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # spec.dependency "JSONKit", "~> 1.4"
-  spec.dependency "legalios", "~> 0.22"
-
+  spec.dependency "legalios", "~> 0.22.5"
 end

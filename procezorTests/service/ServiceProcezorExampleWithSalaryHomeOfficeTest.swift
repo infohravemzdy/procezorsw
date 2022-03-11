@@ -5,8 +5,8 @@
 import Foundation
 import Quick
 import Nimble
+import legalios
 
-@testable import legalios
 @testable import procezor
 
 class ServiceProcezorExampleWithSalaryHomeOfficeTest: QuickSpec {
